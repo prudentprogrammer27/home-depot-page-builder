@@ -16,11 +16,18 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/api/tasks", (req, res) => {
-  client.query("SELECT * FROM tasks").then((result) => {
-    res.send(result.rows);
-  });
-});
+app.get('/api/specifications_dimensions', async (req, res) => {
+  try{
+    const query = `SELECT * FROM specifications_dimensions`;
+
+    const result = await client.query(query);
+    res.json(result.rows);
+  } catch (error) {
+    console.error('Error executing query', error);
+    res.status(500).send('InternalS Server Error');
+  }
+})
+
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);

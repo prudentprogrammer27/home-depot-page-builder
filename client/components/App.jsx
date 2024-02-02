@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Accordion from "./Accordion";
+import Accordion from "./Accordion/Accordion.jsx";
 
 const App = () => {
   const [activeIndex, setActiveIndex] = useState(0);
