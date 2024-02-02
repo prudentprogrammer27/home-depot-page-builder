@@ -11,15 +11,15 @@ body {
   width: 100%;
   height: 33px;
   background-color: #F96302;
+  display: flex; /* Use flex container */
+  align-items: center; /* Center items vertically */
 }
 
 #tophat-span {
   color: white;
   font: 14px helvetica;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
+  margin: auto; /* This will center the text horizontally */
 }
 
 #header-root {
@@ -126,13 +126,18 @@ body {
 
 #storeLogo,
 
-#storeTime,
+#storeTime{
+  background-color: white;
+  height: 20px;
+  width: 20px;
+  color: darkgreen;
+}
 #truck,
 #storeZip {
   background-color: white;
   height: 20px;
   width: 20px;
-  color: black;
+  color: green;
 }
 #storePic {
   max-width: 100%;
