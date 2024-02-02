@@ -19,16 +19,26 @@
                     <img src="./header-images/HDLogo.png" alt="Home Depot Logo">
                 </div>
                 <div class="side-by-side" id="store-loc-time-zip"> 
-                    <div class="location-divs" id="storeLogo"></div>
-                    <div class="location-divs" id="storeLocation"></div>
-                    <div class="location-divs" id="storeTime"></div>
-                    <div class="location-divs" id="truck"></div>
-                    <div class="location-divs" id="storeZip"></div>
+                    <div class="location-divs" id="storeLogo">
+                        <img id="storePic" src="./header-images/store.png">
+                    </div>
+                    <div class="location-divs" id="storeLocation">
+                        SW Color...
+                    </div>
+                    <div class="location-divs" id="storeTime">
+                        9PM
+                    </div>
+                    <div class="location-divs" id="truck">
+                        <img id="truckPic" src="./header-images/truck.png">
+                    </div>
+                    <div class="location-divs" id="storeZip">
+                        86753
+                    </div>
                 </div>
                 <div class="side-by-side" id="searchbar">
-                    <input type="text" id="searchInput" placeholder="What can we help you find today?  ">
+                    <input id="searchStuff" type="text" id="searchInput" placeholder="What can we help you find today?">
                     <button onclick="performSearch()">
-                        <img src="./header-images/search.png">
+                      <img src="./header-images/search.png">
                     </button>
                 </div>
                 <div class="side-by-side" id="navIcons">
@@ -43,6 +53,11 @@
             </div>
         </div>
     </header>
-    <div id="root"></div>
+    <div id="root">
+
+        <div class="box">
+
+        </div>
+    </div>
   </body>
 </html>
