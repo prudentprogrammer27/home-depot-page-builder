@@ -16,10 +16,69 @@ const app = express();
 
 app.use(express.json());
 
-app.get("/api/test", (req, res) => {
-  client.query("SELECT * FROM test_table").then((result) => {
-    res.send(result.rows);
-  });
+// Test Route
+app.get("/api/products", (req, res, next) => {
+  client
+    .query("SELECT * FROM products")
+    .then((result) => {
+      res.send(result.rows);
+    })
+    .catch((err) => {
+      console.error("Error during test query of products", err.stack);
+      res.status(500).send("Error querying product table");
+      next(err);
+    });
+});
+
+// ========== Get Paramatize Product ===========
+// p is short for products (mirrors Home Depot search url)
+// url for thunderclint test:
+// localhost:9000/api/p/ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag
+app.get("/api/p/:product_name", (req, res, next) => {
+  const { product_name } = req.params;
+
+  // Use paramaterized query to prevent SQL injections
+  const query = {
+    text: "SELECT * FROM products WHERE product_name ILIKE $1",
+    values: [`%${product_name}%`], // case-in-sensitive & wildcard search
+  };
+
+  client
+    .query(query)
+    .then((data) => {
+      console.log(
+        `Success getting product with name: ${product_name}`,
+        data.rows
+      );
+      res.status(200).send(data.rows);
+    })
+    .catch((err) => {
+      console.error("Error searching for product", err.stack);
+      next(err);
+    });
+});
+
+app.get("/api/img/:id", (req, res, next) => {
+  const { id } = req.params;
+
+  client
+    .query("SELECT * FROM img_urls WHERE product_id = $1", [id])
+    .then((data) => {
+      console.log(
+        `Success getting product with id: ${id}`,
+        data.rows
+      );
+      res.status(200).send(data.rows);
+    })
+    .catch((err) => {
+      console.error("Error searching for product", err.stack);
+      next(err);
+    });
+});
+
+app.use((err, req, res, next) => {
+  console.error("Reached middleware error handling", err.stack);
+  res.status(500).send("Sorry - something went wrong!");
 });
 
 app.listen(PORT, () => {
