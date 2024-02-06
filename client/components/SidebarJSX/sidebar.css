@@ -1,16 +1,28 @@
+button {
+  all: unset;
+  appearance: none;
+  margin: 0;
+}
+
+[class*=sb-parent] {
+  padding: 10px;
+  border-radius: 3px;
+  margin-bottom: 15px;
+}
+
 .sidebar {
   min-width: 600px;
   flex-wrap: wrap;
   position: relative;
+  /* background-color: rgb(190, 185, 185); */
   width: 42%;
-  background-color: darkgrey;
   height: 100%;
 }
 
 .item-facts {
   margin-bottom: 15px;
-  padding: 10px;
   list-style-type: disc;
+  background-color: #fff;
 }
 
 .item-facts ul {
@@ -30,8 +42,8 @@
 /* -------------- Price component -------------------*/
 .price-wrapper {
   display: flex;
-  padding: 10px;
   margin-bottom: 15px;
+  background-color: #fff;
 }
 
 .price-dollar-sign {
@@ -62,11 +74,12 @@
 
 .consumer-card-wrapper {
   display: flex;
-  width: 100%;
+  width: 95%;
   position: relative;
   margin-top: -20px;
   margin-bottom: 15px;
   padding: 0 15px 15px;
+  background-color: #fff;
 }
 
 .consumer-card-wrapper a{
@@ -92,24 +105,77 @@
   margin: 0;
 }
 
+.cart-info.fulfillment-headers {
+  display: flex;
+  padding-bottom: 8px;
+  padding-right: 5px;
+}
+
+.fulfillment-header-pickup {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 18px;
+  max-width: 165px;
+  width: 50%;
+}
+
+.fulfillment-header-delivery {
+  display: flex;
+  align-items: end;
+  margin-right: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 165px;
+  width: 50%;
+}
+
+.cart-info.fulfillment-cards {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.fulfillment-card {
+  width: 172px;
+  margin-right: 11px;
+  word-wrap: break-word;
+  flex: 1 0 0%;
+  flex-direction: column;
+  max-width: 172px !important;
+  min-height: 142px !important;
+  padding: 10px;
+  position: relative;
+  text-align: left;
+  border: 1px solid black;
+}
+
+.fulfillment-card:hover {
+  box-shadow: 0 4px 9px 0 #000000, 0 3px 10px 0 #000000;
+  transform: translateY(-2px);
+  border: 1px solid #f96302;
+  height: auto;
+}
+
+
 /* --------------LocationInfo component -------------------*/
 .location-info {
   display: flex;
   flex-direction: column;
   height: 40px;
+  background-color: #fff;
 }
 
-.location-info.svg {
+.location-info-svg {
   fill: #009a4f;
   width: 25px;
 }
 
-.location-info.stock-count {
+.location-info-stock-count {
   color: #009a4f;
   padding-right: 10px;
 }
 
-.location-info.stock-info {
+.location-info-stock-info {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: row;
@@ -117,16 +183,19 @@
 
 /* -------------- CartInfo component -------------------*/
 .cart-info.pickup-delivery {
-  height: 100px;
+  display: flex;
+  flex-direction: column;
   border: 1px solid rgb(255, 0, 0);
   margin-top: 10px;
+  background-color: #fff;
 }
 
 .cart-info-truck {
   max-width: 360px;
+  background-color: #fff;
 }
 
-.cart-info-truck.msg {
+.cart-info-truck-msg {
   font-size: 14px;
   line-height: 18px;
   padding-right: 10px;
@@ -154,12 +223,178 @@
   flex-direction: column;
 }
 
+
+/* -------------- Protection plan -------------------*/
+
+.protection-plan {
+  display: flex;
+  flex-direction: row;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  max-width: 100vw;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.protection-plan.inside-wrapper {
+  margin-left: 0.4rem;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.protection-plan-shield-wrapper {
+  margin-right: 1.2rem;
+}
+
+.protection-plan-shield-icon {
+  width: 32px;
+  height: 32px;
+  vertical-align: initial;
+  display: inline-block;
+  fill: #121111;
+}
+
+.protection-plan-info-all {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+  gap: 0.8rem;
+}
+
+.protection-plan-info-title {
+  font-weight: bold;
+  font-size: 22px;
+  font-family: helvetica;
+  line-height: 1.25;
+}
+
+.protection-plan-info-text {
+  font-size: 16px;
+}
+
 .protection-plan-options {
   display: flex;
   flex-direction: column;
 }
 
+.protection-plan-options-btn-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.protection-plan-options-btn {
+  margin-right: 16px;
+}
+
+.protection-plan-WTE {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+}
+
+.protection-plan-WTE span{
+  font-size: 16px;
+  text-decoration-line: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 1px;
+  margin-top: -0.4rem;
+}
+
+.protection-plan-WTE svg{
+  width: 1.6rem;
+  height: 1.6rem;
+  vertical-align: initial;
+  display: inline-block;
+}
+
+/* -------------- Add to card section component -------------------*/
+.add-to-cart-wrapper {
+  background-color: #fff;
+  border-radius: 3px;
+  margin-bottom: 15px;
+  max-width: 100vw;
+  overflow: hidden;
+}
+
+.add-to-cart-options {
+  display: flex;
+  align-items: center;
+  max-width: 420px;
+}
+
+.a2c-quantity-wrapper {
+  align-self: baseline;
+  min-width: 142px;
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.a2c-button-wrapper {
+  display: flex;
+  flex-basis: 100%;
+  max-width: 278px;
+  background-color: #f96302;
+  height: 44px;
+  justify-content: center;
+  align-content: center;
+}
+
+.a2c-quantity-btn {
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  float: left;
+  font-size: 24px;
+  font-weight: 700;
+  height: 42px;
+  min-width: 42px;
+  padding: 0;
+  text-align: center;
+  width: 42px;
+}
+
+.a2c-btn {
+  display: flex;
+  flex-direction: row;
+}
+
+.a2c-cart-img {
+  display: block;
+  width: 16px;
+  height: 16px;
+  margin-right: 0.8rem;
+}
+
 /* -------------- ReturnInfo component -------------------*/
 .return-info {
   display: flex;
+  flex-direction: row;
+  align-items: left;
+  background-color: #fff;
+}
+
+.return-info.all {
+  display: flex;
+  flex-direction: column;
+}
+
+.return-info img {
+  height: 25px;
+  width: 32px;
+  margin-right: 15px;
+  max-width: 100%;
+  align-self: center;
+}
+
+.return-info.message-title {
+  font-family: helvetica;
+  font-weight: bold;
+  font: 1.8rem;
+}
+
+.return-info.message-text span.bold{
+  font-weight: bold; 
 }

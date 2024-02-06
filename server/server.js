@@ -45,8 +45,7 @@ app.get("/api/p/:product_name", (req, res, next) => {
     .query(query)
     .then((data) => {
       console.log(
-        `Success getting product with name: ${product_name}`,
-        data.rows
+        `Success getting product with name: ${product_name}`
       );
       res.status(200).send(data.rows);
     })
@@ -62,7 +61,7 @@ app.get("/api/:table_name/:id", (req, res, next) => {
   client
     .query(`SELECT * FROM ${table_name} WHERE product_id = $1`, [id])
     .then((data) => {
-      console.log(`Success getting product with id: ${id}`, data.rows);
+      console.log(`Success getting product with id: ${id}`);
       res.status(200).send(data.rows);
     })
     .catch((err) => {
