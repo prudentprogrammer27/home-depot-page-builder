@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module" src="./index.jsx"></script>
+    <link href="./app.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+        <div id="tophat">
+            <span id="tophat-span">#1 Home Improvement Retailer</span>
+        </div>
+        <div id="header-root">
+            <div class="header-content">
+                <div class="side-by-side" id="home-depot-logo">
+                    <img src="./header-images/HDLogo.png" alt="Home Depot Logo">
+                </div>
+                <div class="side-by-side" id="store-loc-time-zip"> 
+                    <div class="location-divs" id="storeLogo">
+                        <img id="storePic" src="./header-images/store.png">
+                    </div>
+                    <div class="location-divs" id="storeLocation">
+                        SW Color...
+                    </div>
+                    <div class="location-divs" id="storeTime">
+                        9PM
+                    </div>
+                    <div class="location-divs" id="truck">
+                        <img id="truckPic" src="./header-images/truck.png">
+                    </div>
+                    <div class="location-divs" id="storeZip">
+                        86753
+                    </div>
+                </div>
+                <div class="side-by-side" id="searchbar">
+                    <input id="searchStuff" type="text" id="searchInput" placeholder="What can we help you find today?">
+                    <button onclick="performSearch()">
+                      <img src="./header-images/search.png">
+                    </button>
+                </div>
+                <div class="side-by-side" id="navIcons">
+                    <img src="./header-images/bucket.png">
+                    <img src="./header-images/services.png">
+                    <img src="./header-images/DIY.png">
+                    <img src="./header-images/me.png">
+                </div>
+                <div class="side-by-side" id="cartIcon">
+                    <img src="./header-images/cart.png" alt="Cart Logo">
+                    <div>3</div>
+                </div>
+            </div>
+        </div>
+        <div id="navigationBar">
+            <div id="navBarContents">
+                <div id="navigationPath">... / Tools / Power Tools / Drills / Impact Drivers </div>
+                <div id="navPlaceholder"></div>
+                <div id="adminInfo">Internet # 314109290
+                    Model # PBLCK01K
+                    Store SKU # 1005767796</div>
+            </div>
+        </div>
+    </header>
+    <div id="root">
+
+        <div class="box">
+
+        </div>
+    </div>
+  </body>
+</html>
