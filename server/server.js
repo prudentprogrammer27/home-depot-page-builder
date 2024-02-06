@@ -38,7 +38,7 @@ app.get("/api/p/:product_name", (req, res, next) => {
 
   const query = {
     text: "SELECT * FROM products WHERE product_name ILIKE $1",
-    values: [`%${product_name}%`], // case-in-sensitive & wildcard search
+    values: [`%${product_name}%`], // case-insensitive & wildcard search
   };
 
   client
@@ -69,11 +69,6 @@ app.get("/api/:table_name/:id", (req, res, next) => {
       console.error("Error searching for product", err.stack);
       next(err);
     });
-});
-
-app.use((err, req, res, next) => {
-  console.error("Reached middleware error handling", err.stack);
-  res.status(500).send("Sorry - something went wrong!");
 });
 
 app.use((err, req, res, next) => {
