@@ -76,6 +76,11 @@ app.use((err, req, res, next) => {
   res.status(500).send("Sorry - something went wrong!");
 });
 
+app.use((err, req, res, next) => {
+  console.error("Reached middleware error handling", err.stack);
+  res.status(500).send("Sorry - something went wrong!");
+});
+
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`);
 });
