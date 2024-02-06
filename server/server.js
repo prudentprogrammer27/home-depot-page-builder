@@ -32,12 +32,10 @@ app.get("/api/products", (req, res, next) => {
 
 // ========== Get Paramatize Product ===========
 // p is short for products (mirrors Home Depot search url)
-// url for thunderclint test:
 // localhost:9000/api/p/ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag
 app.get("/api/p/:product_name", (req, res, next) => {
   const { product_name } = req.params;
 
-  // Use paramaterized query to prevent SQL injections
   const query = {
     text: "SELECT * FROM products WHERE product_name ILIKE $1",
     values: [`%${product_name}%`], // case-in-sensitive & wildcard search
@@ -58,16 +56,13 @@ app.get("/api/p/:product_name", (req, res, next) => {
     });
 });
 
-app.get("/api/img/:id", (req, res, next) => {
-  const { id } = req.params;
+app.get("/api/:table_name/:id", (req, res, next) => {
+  const { table_name, id } = req.params;
 
   client
-    .query("SELECT * FROM img_urls WHERE product_id = $1", [id])
+    .query(`SELECT * FROM ${table_name} WHERE product_id = $1`, [id])
     .then((data) => {
-      console.log(
-        `Success getting product with id: ${id}`,
-        data.rows
-      );
+      console.log(`Success getting product with id: ${id}`, data.rows);
       res.status(200).send(data.rows);
     })
     .catch((err) => {

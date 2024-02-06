@@ -9,7 +9,7 @@ const MediaGalleryDesktop = ({ currentProduct }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/img/${currentProduct.id}`);
+        const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
         console.log(response.data);
         setCurrentImages(response.data);
       } catch (error) {
