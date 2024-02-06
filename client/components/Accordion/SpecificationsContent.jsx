@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-const SpecificationsContent = () => {
+const SpecificationsContent = ({ currentProduct }) => {
   const [specifications, setSpecifications] = useState([]);
 
   useEffect(() => {
     const fetchSpecifications = async () => {
       try {
-        const response = await fetch('/api/specifications_dimensions');
-        const data = await response.json();
-        setSpecifications(data);
+        const response = await axios.get(`/api/specifications_dimensions/${currentProduct.id}`);
+        setSpecifications(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
       }
     };
 
     fetchSpecifications();
-  }, []);
+  }, [currentProduct]);
 
   return (
     <div className="accordion_expanded">

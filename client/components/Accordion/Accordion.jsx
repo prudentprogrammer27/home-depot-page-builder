@@ -3,8 +3,21 @@ import ProductDetailsContent from './ProductDetailsContent.jsx';
 import SpecificationsContent from './SpecificationsContent.jsx';
 import QandAContent from './QandAContent.jsx';
 import CustomerReviewsContent from './CustomerReviewsContent.jsx';
+import './accordion.css';
 
-function Panel({ title, children }) {
+
+export default function Accordion( {currentProduct} ) {
+  return (
+    <div className="grid-container">
+      <Panel currentProduct={currentProduct} title="Product Details"  />
+      <Panel currentProduct={currentProduct} title="Specifications" />
+      <Panel currentProduct={currentProduct} title="Questions & Answers" />
+      <Panel currentProduct={currentProduct} title="Customer Reviews" />
+    </div>
+  );
+}
+
+function Panel({ title, children, currentProduct }) {
   const [isActive, setIsActive] = useState(false);
 
   const togglePanel = () => {
@@ -14,13 +27,13 @@ function Panel({ title, children }) {
   const renderContent = () => {
     switch (title) {
       case 'Product Details':
-        return <ProductDetailsContent />;
+        return <ProductDetailsContent currentProduct={currentProduct}/>;
       case 'Specifications':
-        return <SpecificationsContent />;
+        return <SpecificationsContent currentProduct={currentProduct}/>;
       case 'Questions & Answers':
-        return <QandAContent />;
+        return <QandAContent currentProduct={currentProduct}/>;
       case 'Customer Reviews':
-        return <CustomerReviewsContent />;
+        return <CustomerReviewsContent currentProduct={currentProduct}/>;
       default:
         return null;
     }
@@ -43,16 +56,5 @@ function Panel({ title, children }) {
         {isActive && renderContent()}
       </section>
       </div>
-  );
-}
-
-export default function Accordion() {
-  return (
-    <div className="grid-container">
-      <Panel title="Product Details"  />
-      <Panel title="Specifications" />
-      <Panel title="Questions & Answers" />
-      <Panel title="Customer Reviews" />
-    </div>
   );
 }
