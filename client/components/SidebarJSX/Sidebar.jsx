@@ -4,7 +4,7 @@ import ItemFacts from "./ItemFacts.jsx";
 import LocationInfo from "./LocationInfo.jsx";
 import Price from "./Price.jsx";
 import ReturnInfo from "./ReturnInfo.jsx";
-
+import './sidebar.css'
 
 const Sidebar = (/*props*/) => {
     return (
