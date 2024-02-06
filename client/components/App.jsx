@@ -9,9 +9,8 @@ const App = () => {
       <Header/>
       <div className="item-wrapper">
         <div className="item-wrapper bounding-box">
-          <div className="link-path">Link path // store sku</div>
           <div className="picture-and-sidebar">
-            <div className="img-gallery"><span>GALLERY</span></div>
+            <div className="img-gallery"></div>
             <Sidebar/>
           </div>
         </div>
