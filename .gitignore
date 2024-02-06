@@ -1,8 +1,3 @@
 **/node_modules/
 **/.env
 /client/dist
-/client/components/SidebarJSX/sidebar-scrap-html.md
-sidebar-scrap-html.md
-client/index.jsx
-client/components/App.jsx
-App.jsx
