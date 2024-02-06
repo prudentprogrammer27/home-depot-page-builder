@@ -7,24 +7,6 @@ body {
   padding: 8px;
 }
 
-header {
-  height: 10vh;
-  display: flex;
-  justify-content: center;
-  align-content: center;
-  border: 1px solid black
-}
-
-header span {
-  text-align: center;
-  align-self: center;
-}
-
-.link-path {
-  border: 1px solid black;
-  height: 5vh;
-}
-
 .item-wrapper {
   min-height: 100vh;
   flex-wrap: wrap;
