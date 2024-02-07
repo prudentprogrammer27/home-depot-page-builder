@@ -1,68 +1,87 @@
 import React, { useEffect, useState } from "react";
 import "./mediaModal.css";
-import ImageGallery from "react-image-gallery";
 import axios from "axios";
 
-const MediaModal = ({ currentProduct, toggleModal, modal }) => {
-  // TODO refactor ========== Re-Use Code from media Gallery
-  const [currentImages, setCurrentImages] = useState([]);
+const MediaModal = ({ currentProduct, toggleModal }) => {
+  const [mainImage, setMainImage] = useState("");
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
         console.log("Image-url table", response.data);
-        setCurrentImages(response.data);
+        if (response.data.length > 0) {
+          const imagesData = response.data.map((image) => ({
+            original: `https://images.thdstatic.com/productImages/${image.img_url}600.jpg`,
+            thumbnail: `https://images.thdstatic.com/productImages/${image.img_url}100.jpg`,
+            id: `image${image.id}`,
+          }));
+          setImages(imagesData);
+          setMainImage(imagesData[0].original);
+        }
       } catch (error) {
-        console.error("Error fetching product page", error);
+        console.error("Error fetching image-urls for modal", error);
       }
     };
     fetchData();
-  }, [currentProduct]); // empty dependency array so only runs when component mounts
+  }, [currentProduct]);
 
-  const prepImgUrl = (img_url) => {
-    const baseURL = "https://images.thdstatic.com/productImages/";
-    return {
-      original: `${baseURL}${img_url}600.jpg`,
-      thumbnail: `${baseURL}${img_url}145.jpg`,
-    };
+  const handleThumbnailClick = (thumbnail) => {
+    setMainImage(thumbnail.original);
   };
 
-  const images = currentImages.map((image) => prepImgUrl(image.img_url));
-  console.log("Images", images);
-  // ================= End Re-use
+  const showThumbnails = () => {
+    return images.map((image) => (
+      <button
+        key={image.id}
+        className="btn-thumbnail"
+        onClick={() => handleThumbnailClick(image)}
+      >
+        <img
+          src={image.thumbnail}
+          className="thumbnail-image"
+          alt={`Thumbnail ${image.id}`}
+        />
+      </button>
+    ));
+  };
 
-  // ===========  Specific to MODAL
-  const handleClick = () => {
+  const handleClose = () => {
     toggleModal();
   };
 
-  // if (modal) {
-  //   document.body.classList.add("active-modal");
-  // } else {
-  //   document.body.classList.remove("active-modal");
-  // }
+  const handleClick = (e) => {
+    e.stopPropagation();
+  };
 
   return (
     <>
       <div className="modal">
-        <div className="overlay" onClick={handleClick}>
-          <div className="modal-content">
-            <ImageGallery
-              items={images}
-              thumbnailPosition="right"
-              loading="lazy"
-              thumbnailLoading="lazy"
-              showFullscreenButton={false}
-              showPlayButton={false}
-              showNav={false}
-            />
-            <div>
-              ONE+ HP 18V Brushless Cordless 1/2 in. Drill/Driver and Impact
-              Driver Kit w/(2) 2.0 Ah Batteries, Charger, and Bag
+        <div className="overlay" onClick={handleClose}>
+          <div
+            id="modal-content"
+            className="modal-content"
+            onClick={handleClick}
+          >
+            <div className="modal-main-image">
+              <img src={mainImage} alt="Main Image" />
             </div>
-            <button className="close-modal" onClick={handleClick}>
-              CLOSE
+            <div className="modal-item-details">
+              <div id="modal-item-description">
+                {currentProduct.product_name}
+              </div>
+              <div id="modal-item-manufacturer">
+                by <b>{currentProduct.manufacturer}</b>
+              </div>
+              <div className="modal-thumbnails-title">Product Images</div>
+              <div className="modal-thumbnail-container">
+                {showThumbnails()}
+              </div>
+            </div>
+            <button className="close-modal" onClick={handleClose}>
+              <span className="close-modal-CLOSE">CLOSE</span>
+              <span className="close-modal-X">X</span>
             </button>
           </div>
         </div>
