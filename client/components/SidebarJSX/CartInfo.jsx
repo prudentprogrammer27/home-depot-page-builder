@@ -1,44 +1,10 @@
+import FulfillmentTiles from "./FulfillmentTiles.jsx";
+import AddToCart from "./AddToCart.jsx";
+
 const CartInfo =()=> {
     return (
         <div className="cart-info-wrapper">
-            <div className="cart-info pickup-delivery sb-parent">
-                <div className="cart-info fulfillment-headers">
-                    <div className="fulfillment-header-pickup">Pickup at N Tacoma</div>
-                    <div className="fulfillment-header-delivery">Delivering to 55555</div>
-                </div>
-                <div className="cart-info fulfillment-cards">
-                    <button className="fulfillment-card">
-                        <div className="fulfillment-card-text">
-                            <div className="fulfillment-card-title">
-                                <span><b>Pickup</b></span>
-                            </div>
-                            <div className="fulfillment-card-subtitle">
-                                <div><b>Today</b></div>
-                                <div className="card-subtitle-qty">
-                                    <span>11</span>
-                                    in stock
-                                </div>
-                            </div>
-                            <div className="card-subtitle-special-msg">FREE</div>
-                        </div>
-                    </button>
-                    <button className="fulfillment-card">
-                        <div className="fulfillment-card-text">
-                            <div className="fulfillment-card-title">
-                                <span><b>Delivery</b></span>
-                            </div>
-                            <div className="fulfillment-card-subtitle">
-                                <div><b>Tomorrow</b></div>
-                                <div className="card-subtitle-qty">
-                                    <span>1,011</span>
-                                    available
-                                </div>
-                            </div>
-                            <div className="card-subtitle-special-msg">FREE</div>
-                        </div>
-                    </button>
-                </div>
-            </div>
+            <FulfillmentTiles/>
             <div className="cart-info-truck sb-parent">
                 <div className="cf-truck-icon"></div>
                 <span className="cart-info-truck-msg"><b>Get it as soon as today.</b> Schedule your delivery in checkout.</span>
@@ -85,28 +51,7 @@ const CartInfo =()=> {
                     </div>
                 </div>
             </div>
-            <div className="add-to-cart-wrapper sb-parent">
-                <div className="add-to-cart-options">
-                    <div className="a2c-quantity-wrapper">
-                        <button className="a2c-quantity-btn">-</button>
-                        <input className="a2c-quantity-btn" inputMode="numeric" min={0} max={3} maxLength={4} pattern="[0-9]*" value={1}></input>
-                        <button className="a2c-quantity-btn">+</button>
-                    </div>
-                    <div className="a2c-button-wrapper">
-                        <button className="a2c-btn">
-                            <span className="a2c-cart-img">
-                                <svg viewBox='0 0 24 24' focusable='false'>
-                                    <path d="M0 2.25h2.25V16.5H.75v2.25h3.266A3.001 3.001 0 1 0 9 
-                                    21c0-.896-.393-1.7-1.016-2.25h9.032A3.001 3.001 0 1 0 22 
-                                    21c0-.896-.393-1.7-1.016-2.25H24V16.5H4.5V1.125C4.5.504 3.996 0 3.375 0H0v2.25Z">
-                                    </path>
-                                </svg>
-                            </span>
-                            Add to Cart
-                        </button>
-                    </div>
-                </div>
-            </div>
+            <AddToCart/>
         </div>
     )
 }

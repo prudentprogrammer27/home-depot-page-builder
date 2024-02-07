@@ -151,15 +151,40 @@ button {
   padding: 10px;
   position: relative;
   text-align: left;
-  border: 1px solid black;
+  border: 1px solid #ccc;
+  border-radius: 4px 0 4px 4px;
 }
 
 .fulfillment-card:hover {
   box-shadow: 0 4px 9px 0 #ccc, 0 3px 10px 0 #ccc;
   /* box-shadow: 0 4px 9px 0 #000000, 0 3px 10px 0 #000000; */
   transform: translateY(-2px);
-  border: 1px solid #f96302;
+  /* border: 1px solid #f96302; */
   height: auto;
+  transition: all .2s ease-in-out;
+}
+
+.fulfillment-card.selected {
+  border: 1px solid;
+  border-color: #f96302 #f96302 #0000 #0000;
+}
+
+.fulfillment-card.selected::before {
+  border-style: solid;
+  border-width: 30px 0 0 30px;
+  border-color: #f96302 #f96302 #0000 #0000;
+  content: "";
+  position: absolute;
+  right: -1px;
+  top: -1px;
+}
+
+.fulfillment-card.selected::after {
+  content: url(https://assets.thdstatic.com/images/v1/alert-check-white.svg);
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  transform: scale(.6);
 }
 
 .fulfillment-card-text {
@@ -229,7 +254,7 @@ location-info sb-parent">
 }
 
 /* -------------- CartInfo component -------------------*/
-.cart-info.pickup-delivery {
+.fulfillment-tiles {
   display: flex;
   flex-direction: column;
   margin-top: 10px;
