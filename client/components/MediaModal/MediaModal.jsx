@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./mediaModal.css";
-import ImageGallery from "react-image-gallery";
 import axios from "axios";
 
-const MediaModal = ({ currentProduct, toggleModal, modal }) => {
-  // TODO refactor ========== Re-Use Code from media Gallery
-  // const [currentImages, setCurrentImages] = useState([]);
+const MediaModal = ({ currentProduct, toggleModal }) => {
   const [mainImage, setMainImage] = useState("");
-  const [originals, setOriginals] = useState([]);
-  const [thumbnails, setThumbnails] = useState([]);
-  console.log(currentProduct);
+  const [images, setImages] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -17,59 +12,60 @@ const MediaModal = ({ currentProduct, toggleModal, modal }) => {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
         console.log("Image-url table", response.data);
         if (response.data.length > 0) {
-          const originalImages = response.data.map((image) => {
-            return prepImgUrl(image.img_url, "original", image.id);
-          });
-          const thumbnailImages = response.data.map((image) => {
-            return prepImgUrl(image.img_url, "thumbnail", image.id);
-          });
-          const firstImageURL = originalImages[0].original;
-          setOriginals(originalImages);
-          setThumbnails(thumbnailImages);
-          console.log("First Imgage URL", firstImageURL);
-          setMainImage(firstImageURL);
+          const imagesData = response.data.map((image) => ({
+            original: `https://images.thdstatic.com/productImages/${image.img_url}600.jpg`,
+            thumbnail: `https://images.thdstatic.com/productImages/${image.img_url}100.jpg`,
+            id: `image${image.id}`,
+          }));
+          setImages(imagesData);
+          setMainImage(imagesData[0].original);
         }
       } catch (error) {
         console.error("Error fetching image-urls for modal", error);
       }
     };
     fetchData();
-  }, [currentProduct]); // empty dependency array so only runs when component mounts
+  }, [currentProduct]);
 
-  const prepImgUrl = (img_url, size, id) => {
-    const baseURL = "https://images.thdstatic.com/productImages/";
-    return {
-      original:
-        size === "original"
-          ? `${baseURL}${img_url}600.jpg`
-          : `${baseURL}${img_url}145.jpg`,
-      thumbnail:
-        size === "thumbnail"
-          ? `${baseURL}${img_url}100.jpg`
-          : `${baseURL}${img_url}600.jpg`,
-      id: size === "orginal" ? `og${id}` : `thumb${id}`,
-    };
-  };
-
-  const handleClick = () => {
-    toggleModal();
+  const handleThumbnailClick = (thumbnail) => {
+    setMainImage(thumbnail.original);
   };
 
   const showThumbnails = () => {
-    return thumbnails.map((thumbnail) => (
-      <button key={thumbnail.id} className="btn-thumbnail">
-        <img src={thumbnail.thumbnail} className="thumbnail-image" />
+    return images.map((image) => (
+      <button
+        key={image.id}
+        className="btn-thumbnail"
+        onClick={() => handleThumbnailClick(image)}
+      >
+        <img
+          src={image.thumbnail}
+          className="thumbnail-image"
+          alt={`Thumbnail ${image.id}`}
+        />
       </button>
     ));
+  };
+
+  const handleClose = () => {
+    toggleModal();
+  };
+
+  const handleClick = (e) => {
+    e.stopPropagation();
   };
 
   return (
     <>
       <div className="modal">
-        <div className="overlay" onClick={handleClick}>
-          <div id="modal-content" className="modal-content">
+        <div className="overlay" onClick={handleClose}>
+          <div
+            id="modal-content"
+            className="modal-content"
+            onClick={handleClick}
+          >
             <div className="modal-main-image">
-              <img src={mainImage} />
+              <img src={mainImage} alt="Main Image" />
             </div>
             <div className="modal-item-details">
               <div id="modal-item-description">
@@ -83,7 +79,7 @@ const MediaModal = ({ currentProduct, toggleModal, modal }) => {
                 {showThumbnails()}
               </div>
             </div>
-            <button className="close-modal" onClick={handleClick}>
+            <button className="close-modal" onClick={handleClose}>
               <span className="close-modal-CLOSE">CLOSE</span>
               <span className="close-modal-X">X</span>
             </button>
