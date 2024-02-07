@@ -1,3 +1,7 @@
+.accordion_expanded{
+  padding: 20px;
+}
+
 .specTitle {
     font-weight: 550;
     padding: 15px 0 10px;
@@ -19,6 +23,7 @@
   .spec_table_container {
     margin: 0 auto 40px;
     width: 100%;
+    
   }
   
   .spec_table {
