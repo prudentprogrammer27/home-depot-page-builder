@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import ProductDetailsContent from './ProductDetailsContent.jsx';
+import ProductDetailsContent from './ProductDetailsContent/ProductDetailsContent.jsx';
 import SpecificationsContent from './SpecificationsContent/SpecificationsContent.jsx';
 import QandAContent from './Q&A/QandAContent.jsx';
 import CustomerReviewsContent from './CustomerReviewsContent.jsx';
