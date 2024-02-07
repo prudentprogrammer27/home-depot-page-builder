@@ -4,9 +4,15 @@ import Header from "./Header/Header.jsx";
 import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
+import MediaModal from "./MediaModal/MediaModal.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
 
   const ryobiDrill =
     "ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag";
@@ -15,7 +21,7 @@ const App = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/p/${ryobiDrill}`);
-        console.log(response.data);
+        // console.log(response.data);
         setCurrentProduct(response.data[0]);
       } catch (error) {
         console.error("Error fetching product page", error);
@@ -27,10 +33,20 @@ const App = () => {
   return (
     <main>
       <Header />
+      {modal && (
+        <MediaModal
+          currentProduct={currentProduct}
+          toggleModal={toggleModal}
+          modal={modal}
+        />
+      )}
         <div className="item-wrapper bounding-box">
           <div className="picture-and-sidebar">
             <div className="img-gallery">
-              {/* <MediaGalleryDesktop currentProduct={currentProduct} /> */}
+              <MediaGalleryDesktop
+                currentProduct={currentProduct}
+                toggleModal={toggleModal}
+              />
             </div>
             <Sidebar />
           </div>
@@ -41,4 +57,3 @@ const App = () => {
 };
 
 export default App;
-
