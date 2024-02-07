@@ -1,0 +1,42 @@
+@import "react-image-gallery/styles/css/image-gallery.css";
+
+/* body.active-modal {
+  overflow-y: hidden;
+} */
+
+
+.btn-modal {
+  padding: 10px 20px;
+  display: block;
+  margin: 100px auto 0;
+  font-size: 18px;
+}
+
+.overlay {
+  background: #0009;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  overflow: auto;
+  right: fixed;
+  top: 3%;
+  bottom: 3%;
+  left: 3%;
+  right: 3%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 7px;
+}
