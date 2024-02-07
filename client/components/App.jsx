@@ -40,7 +40,6 @@ const App = () => {
           modal={modal}
         />
       )}
-      <div className="item-wrapper">
         <div className="item-wrapper bounding-box">
           <div className="picture-and-sidebar">
             <div className="img-gallery">
@@ -51,11 +50,8 @@ const App = () => {
             </div>
             <Sidebar />
           </div>
+        <Accordion currentProduct={currentProduct}/>
         </div>
-        <div className="accordionGrid">
-          <Accordion currentProduct={currentProduct} />
-        </div>
-      </div>
     </main>
   );
 };

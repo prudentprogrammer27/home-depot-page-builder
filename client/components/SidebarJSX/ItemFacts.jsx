@@ -1,6 +1,6 @@
 const ItemFacts =()=> {
     return (
-        <div className="item-facts">
+        <div className="item-facts sb-parent">
             <ul>
                 <li>Up to 25% Faster Driving and Up to 50% More Torque</li>
                 <li>{'Includes: (2) 2.0 Ah High Performance Batteries, Charger, and Bag'}</li>
