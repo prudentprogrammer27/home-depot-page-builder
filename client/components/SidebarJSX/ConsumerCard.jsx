@@ -1,6 +1,6 @@
 const ConsumerCard =()=> {
     return (
-        <div className="consumer-card-wrapper">
+        <div className="consumer-card-wrapper sb-parent">
             <img className="consumer-card-png" src="https://assets.thdstatic.com/images/v1/payment-credit-card-thd.png"></img>
             <div className="consumer-card info">
                 <div>Pay <b>$154.00</b> after <b>$25 OFF</b> your total qualifying purchase upon opening a new card.

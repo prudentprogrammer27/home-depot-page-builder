@@ -1,6 +1,6 @@
 const Price =()=> {
     return (
-        <div className="price-wrapper">
+        <div className="price-wrapper sb-parent">
             <img className="sale-icon" src="https://assets.thdstatic.com/images/v1/Value-Pricing-Special-Buy.svg"></img>
             <div className="price">
                 <span className="price-dollar-sign">$</span>

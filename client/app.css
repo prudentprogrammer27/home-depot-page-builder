@@ -7,13 +7,6 @@ body {
   padding: 8px;
 }
 
-.item-wrapper {
-  min-height: 100vh;
-  flex-wrap: wrap;
-  width: 100%;
-  flex-wrap: wrap;
-}
-
 .item-wrapper.bounding-box {
   margin: 0 auto;
   max-width: 1440px;
