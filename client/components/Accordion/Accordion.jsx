@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import ProductDetailsContent from './ProductDetailsContent.jsx';
-import SpecificationsContent from './SpecificationsContent.jsx';
+import SpecificationsContent from './SpecificationsContent/SpecificationsContent.jsx';
 import QandAContent from './QandAContent.jsx';
 import CustomerReviewsContent from './CustomerReviewsContent.jsx';
 import './accordion.css';
@@ -8,11 +8,13 @@ import './accordion.css';
 
 export default function Accordion( {currentProduct} ) {
   return (
-    <div className="grid-container">
-      <Panel currentProduct={currentProduct} title="Product Details"  />
-      <Panel currentProduct={currentProduct} title="Specifications" />
-      <Panel currentProduct={currentProduct} title="Questions & Answers" />
-      <Panel currentProduct={currentProduct} title="Customer Reviews" />
+    <div className="accordionGrid">
+      <div className="grid-container">
+        <Panel currentProduct={currentProduct} title="Product Details"  />
+        <Panel currentProduct={currentProduct} title="Specifications" />
+        <Panel currentProduct={currentProduct} title="Questions & Answers" />
+        <Panel currentProduct={currentProduct} title="Customer Reviews" />
+      </div>
     </div>
   );
 }
