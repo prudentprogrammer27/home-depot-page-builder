@@ -36,9 +36,7 @@ const App = () => {
             <Sidebar />
           </div>
         </div>
-      <div className="accordionGrid">
         <Accordion currentProduct={currentProduct}/>
-        </div>
       </div>
     </main>
   );

@@ -8,11 +8,13 @@ import './accordion.css';
 
 export default function Accordion( {currentProduct} ) {
   return (
-    <div className="grid-container">
-      <Panel currentProduct={currentProduct} title="Product Details"  />
-      <Panel currentProduct={currentProduct} title="Specifications" />
-      <Panel currentProduct={currentProduct} title="Questions & Answers" />
-      <Panel currentProduct={currentProduct} title="Customer Reviews" />
+    <div className="accordionGrid">
+      <div className="grid-container">
+        <Panel currentProduct={currentProduct} title="Product Details"  />
+        <Panel currentProduct={currentProduct} title="Specifications" />
+        <Panel currentProduct={currentProduct} title="Questions & Answers" />
+        <Panel currentProduct={currentProduct} title="Customer Reviews" />
+      </div>
     </div>
   );
 }
