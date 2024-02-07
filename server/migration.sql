@@ -130,3 +130,12 @@ CREATE TABLE review_images (
   review_id INTEGER REFERENCES reviews(id),
   img_url VARCHAR
 );
+
+CREATE TABLE productDetails_images (
+  id SERIAL PRIMARY KEY,
+  imageSrc VARCHAR,
+  altText VARCHAR,
+  title VARCHAR,
+  detail TEXT,
+  product_id INTEGER REFERENCES products(id)
+);
