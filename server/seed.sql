@@ -293,10 +293,50 @@ INSERT INTO customer_questions (product_id, question_content, user_name, questio
     'Pinoy',
     '2023-12-03',
     'RYOBI',
-    'Hello, Pinoy - Thank you for your question. If your unit has a "VNM" on the data label for the model number, it was created in Vietnam, however, our products are made all over the world. I hope this helps! Additionally, if you need further support, then a RYOBI Customer Experience Professional is here for you, Monday - Friday from 9 am to 6 pm (EST) when you call or text us at 1.800.525.2579 or through email or live chat when you visit us at https://www.ryobitools.com/support/contact. And thank you again for your interest in the ONE+ HP 18V Brushless Cordless 1/2 in. Drill/Driver and Impact Driver Kit w/(2) 2.0 Ah Batteries, Charger, and Bag. - Teyana',
+    'Hello, Pinoy - Thank you for your question. If your unit has a 'VNM' on the data label for the model number, it was created in Vietnam, however, our products are made all over the world. I hope this helps! Additionally, if you need further support, then a RYOBI Customer Experience Professional is here for you, Monday - Friday from 9 am to 6 pm (EST) when you call or text us at 1.800.525.2579 or through email or live chat when you visit us at https://www.ryobitools.com/support/contact. And thank you again for your interest in the ONE+ HP 18V Brushless Cordless 1/2 in. Drill/Driver and Impact Driver Kit w/(2) 2.0 Ah Batteries, Charger, and Bag. - Teyana',
     '2023-12-04'
 );
 
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1665754974615/314109290-POD1.jpg',
+   'RYOBI Tools',
+   'RYOBI Tools',
+   'RYOBI gives you the ultimate in cordless versatility, selection, and innovation to get the job done. No matter your interests or skill level, RYOBI can power it',
+   1) 
+;
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1665754975484/314109290-POD2.jpg',
+   'ONE+ HP',
+   'ONE+ HP',
+   'The 18V ONE+ HP Brushless series utilizes Advanced Technologies and Superior Ergonomics to deliver High Performance tools and a premium user experience',
+   1) 
+;
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1665754975494/314109290-POD3.jpg',
+   'Premium Performance',
+   'Premium Performance',
+   'All tools in the ONE+ HP series feature a brushless motor, advanced electronics, and lithium-ion batteries to deliver more power, longer runtime, and longer motor life',
+   1) 
+;
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1665754975591/314109290-POD4.jpg',
+   'Brushless Motor',
+   'Brushless Motor',
+   'Provides maximum power, extended runtime, and longer motor life',
+   1) 
+;
 
 
 -- INSERT INTO options (product_id, option_content, option_pic_url) VALUES ()
