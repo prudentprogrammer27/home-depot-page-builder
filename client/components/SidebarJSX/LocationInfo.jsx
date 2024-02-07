@@ -1,6 +1,7 @@
 const LocationInfo =()=> {
     return (
-        <fieldset className="location-info sb-parent">
+      <div className="location-info sb-parent">
+        <fieldset className="location-info-fieldset">
             <legend><b>N Tacoma Store</b></legend>
                 <section className="location-info-stock-info">
                   <span>
@@ -10,6 +11,7 @@ const LocationInfo =()=> {
                   <span>Aisle 21, Bay 001</span>
                 </section>
         </fieldset>
+      </div>
     )
 }
 

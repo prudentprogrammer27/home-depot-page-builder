@@ -8,11 +8,9 @@ const Price =()=> {
                 <span className="price-cents">00</span>
             </div>
             <div className="sale-info">
-                <div>Limit 3 per order</div>
-                <div>
-                    <div>$199.00</div>
-                    <div>{'Save $20.00(10%)'}</div>
-                </div>
+                <div className="sale-limit">Limit 3 per order</div>
+                <div className="sale-price-original"><s>$199.00</s></div>
+                <div className="sale-discount-amount">{'Save $20.00(10%)'}</div>
             </div>
         </div>
     )

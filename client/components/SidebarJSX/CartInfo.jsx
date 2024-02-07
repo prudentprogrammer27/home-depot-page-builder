@@ -7,8 +7,36 @@ const CartInfo =()=> {
                     <div className="fulfillment-header-delivery">Delivering to 55555</div>
                 </div>
                 <div className="cart-info fulfillment-cards">
-                    <button className="fulfillment-card">Pickup</button>
-                    <button className="fulfillment-card">Delivery</button>
+                    <button className="fulfillment-card">
+                        <div className="fulfillment-card-text">
+                            <div className="fulfillment-card-title">
+                                <span><b>Pickup</b></span>
+                            </div>
+                            <div className="fulfillment-card-subtitle">
+                                <div><b>Today</b></div>
+                                <div className="card-subtitle-qty">
+                                    <span>11</span>
+                                    in stock
+                                </div>
+                            </div>
+                            <div className="card-subtitle-special-msg">FREE</div>
+                        </div>
+                    </button>
+                    <button className="fulfillment-card">
+                        <div className="fulfillment-card-text">
+                            <div className="fulfillment-card-title">
+                                <span><b>Delivery</b></span>
+                            </div>
+                            <div className="fulfillment-card-subtitle">
+                                <div><b>Tomorrow</b></div>
+                                <div className="card-subtitle-qty">
+                                    <span>1,011</span>
+                                    available
+                                </div>
+                            </div>
+                            <div className="card-subtitle-special-msg">FREE</div>
+                        </div>
+                    </button>
                 </div>
             </div>
             <div className="cart-info-truck sb-parent">
