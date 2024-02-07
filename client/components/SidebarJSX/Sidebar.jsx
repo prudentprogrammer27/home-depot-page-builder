@@ -12,7 +12,7 @@ const Sidebar = ({currentProduct}) => {
     return (
         <div className="sidebar">
             <Price currentProduct={currentProduct}/>
-            <ConsumerCard/>
+            <ConsumerCard currentProduct={currentProduct}/>
             <ItemFacts/>
             <LocationInfo/>
             <CartInfo/>
