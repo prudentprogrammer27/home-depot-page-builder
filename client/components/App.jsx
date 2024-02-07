@@ -27,19 +27,17 @@ const App = () => {
   return (
     <main>
       <Header />
-      <div className="item-wrapper">
         <div className="item-wrapper bounding-box">
           <div className="picture-and-sidebar">
             <div className="img-gallery">
-              <MediaGalleryDesktop currentProduct={currentProduct} />
+              {/* <MediaGalleryDesktop currentProduct={currentProduct} /> */}
             </div>
             <Sidebar />
           </div>
+          <div className="accordionGrid">
+            <Accordion currentProduct={currentProduct}/>
+          </div>
         </div>
-      <div className="accordionGrid">
-        <Accordion currentProduct={currentProduct}/>
-        </div>
-      </div>
     </main>
   );
 };
