@@ -48,7 +48,7 @@ const App = () => {
                 toggleModal={toggleModal}
               />
             </div>
-            <Sidebar />
+            <Sidebar currentProduct={currentProduct} />
           </div>
         <Accordion currentProduct={currentProduct}/>
         </div>

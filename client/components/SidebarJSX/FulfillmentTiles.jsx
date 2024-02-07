@@ -2,11 +2,11 @@ import { useState } from "react";
 import FulfillmentTile from "./FufillmentTile.jsx";
 
 const FulfillmentTiles = () => {
-    const [currTile, setCurrTile] = useState([])
+    const [currTile, setCurrTile] = useState('Pickup');
 
     return (
         <div className="fulfillment-tiles sb-parent">
-            <div className="cart-info fulfillment-headers">
+            <div className="fulfillment-tiles fulfillment-headers">
                 <div className="fulfillment-header-pickup">Pickup at N Tacoma</div>
                 <div className="fulfillment-header-delivery">Delivering to 55555</div>
             </div>

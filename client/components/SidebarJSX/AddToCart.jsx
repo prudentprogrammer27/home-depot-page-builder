@@ -2,18 +2,23 @@ import { useState } from "react";
 
 const AddToCart = () => {
     const [bgColor, setBgColor] = useState('#f96302')
+    const [value, setValue] = useState('1');
 
     const handleHover = () => {
         (bgColor === '#f96302') ? setBgColor('rgb(33 33 32)') : setBgColor('#f96302');
+    }
+
+    const handleUserInput = (e) => {
+        setValue(e.target.value)
     }
 
     return (
         <div className="add-to-cart-wrapper sb-parent">
             <div className="add-to-cart-options">
                 <div className="a2c-quantity-wrapper">
-                    <button className="a2c-quantity-btn">-</button>
-                    <input className="a2c-quantity-btn" inputMode="numeric" min={0} max={3} maxLength={4} pattern="[0-9]*" value={1}></input>
-                    <button className="a2c-quantity-btn">+</button>
+                    <button readOnly={true} className="a2c-quantity-btn">-</button>
+                    <input onChange={handleUserInput} className="a2c-quantity-btn" inputMode="numeric" min={0} max={3} maxLength={4} pattern="[0-9]*" value={value}></input>
+                    <button readOnly={true} className="a2c-quantity-btn">+</button>
                 </div>
                 <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="a2c-button-wrapper" style={{backgroundColor: bgColor}}>
                     <button className="a2c-btn">

@@ -16,7 +16,6 @@ button {
   position: relative;
   /* background-color: rgb(190, 185, 185); */
   width: 42%;
-  height: 100%;
 }
 
 .item-facts {
@@ -109,8 +108,9 @@ button {
   margin: 0;
 }
 
-.cart-info.fulfillment-headers {
+.fulfillment-tiles.fulfillment-headers {
   display: flex;
+  flex-direction: row;
   padding-bottom: 8px;
   padding-right: 5px;
 }
@@ -166,7 +166,7 @@ button {
 
 .fulfillment-card.selected {
   border: 1px solid;
-  border-color: #f96302 #f96302 #0000 #0000;
+  border-color: #f96302 #f96302 #f96302 #f96302;
 }
 
 .fulfillment-card.selected::before {
