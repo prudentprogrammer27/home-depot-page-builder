@@ -34,7 +34,6 @@ const App = () => {
             </div>
             <Sidebar />
           </div>
-        </div>
         <Accordion currentProduct={currentProduct}/>
       </div>
     </main>
