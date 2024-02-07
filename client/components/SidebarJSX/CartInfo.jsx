@@ -7,8 +7,10 @@ const CartInfo =()=> {
         <div className="cart-info-wrapper">
             <FulfillmentTiles/>
             <div className="cart-info-truck sb-parent">
-                <div className="cf-truck-icon"></div>
-                <span className="cart-info-truck-msg"><b>Get it as soon as today.</b> Schedule your delivery in checkout.</span>
+                <div>
+                    <div className="cf-truck-icon"></div>
+                    <span className="cart-info-truck-msg"><b>Get it as soon as today.</b> Schedule your delivery in checkout.</span>
+                </div>
             </div>
             <ProtectionPlan/>
             <AddToCart/>

@@ -220,27 +220,33 @@ button {
 
 
 /* --------------LocationInfo component -------------------*/
-/* 
-location-info sb-parent">
-        <fieldset className="location-info-fieldset"> */
 
 .location-info {
   display: flex;
   flex-direction: column;
-  height: 50px;
   background-color: #fff;
 }
 
 .location-info-fieldset {
-  height: 50px;
   border: 0;
+  margin: 0;
+  padding: 0;
   font-size: 16px;
   line-height: 2;
+}
+
+.location-info-fieldset legend{
+  padding-bottom: 5px;
+}
+
+.location-info-fieldset section span {
+  height: fit-content;
 }
 
 .location-info-svg {
   fill: #009a4f;
   width: 25px;
+  height: 25px;
 }
 
 .location-info-stock-count {
@@ -263,11 +269,16 @@ location-info sb-parent">
 }
 
 .cart-info-truck {
-  max-width: 360px;
   background-color: #fff;
 }
 
+.cart-info-truck div {
+  display: flex;
+  max-width: 360px;
+}
+
 .cart-info-truck-msg {
+  font-family: helvetica;
   font-size: 14px;
   line-height: 18px;
   padding-right: 10px;
@@ -279,6 +290,7 @@ location-info sb-parent">
   width: 32px;
   float: left;
   margin-right: 10px;
+  padding-right: 10px;
   margin-top: 12px;
   padding-bottom: 0;
   background-image: url(https://assets.thdstatic.com/images/v1/delivery-express-truck.svg);
@@ -306,12 +318,6 @@ location-info sb-parent">
   max-width: 100vw;
   overflow: hidden;
   background-color: #fff;
-}
-
-.protection-plan.inside-wrapper {
-  margin-left: 0.4rem;
-  flex-direction: row;
-  padding: 10px;
 }
 
 .protection-plan-shield-wrapper {
@@ -347,16 +353,39 @@ location-info sb-parent">
 .protection-plan-options {
   display: flex;
   flex-direction: column;
-}
-
-.protection-plan-options-btn-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+  gap: 10px;
 }
 
 .protection-plan-options-btn {
+  display: flex;
+  flex-direction: row;
   margin-right: 16px;
+}
+
+.protection-plan-radio-svg {
+  position: absolute;
+  width: 1.2rem;
+  top: 3.6px;
+  left: 4px;
+}
+
+.prot-option-title {
+  margin-left: 30px;
+}
+
+.protection-plan-btn-wrap input{
+  position: absolute;
+  z-index: -1;
+}
+
+.protection-plan-btn-wrap {
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 999px;
+}
+
+.protection-plan-btn-wrap span{
+  position: absolute;
 }
 
 .protection-plan-WTE {

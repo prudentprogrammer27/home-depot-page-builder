@@ -1,7 +1,8 @@
+import ProtectionPlanBtns from "./ProtectionPlanBtns.jsx";
+
 const ProtectionPlan = () => {
     return (
         <div className="protection-plan sb-parent">
-            <div className="protection-plan inside-wrapper">
                 <div className="protection-plan-shield-wrapper">
                     <svg viewBox="0 0 24 24" className="protection-plan-shield-icon">
                         <path d="m11.471.32.01-.005.51-.266.514.258.041.02a46.943 46.943 0 0 0 .589.29c.392.19.93.449 1.52.72 1.211.56 2.533 1.127
@@ -18,17 +19,7 @@ const ProtectionPlan = () => {
                 <div className="protection-plan-info-all">
                     <div className="protection-plan-info-title">Protect This Item</div>
                     <div className="protection-plan-info-text">Select a Home Depot Protection Plan by Allstate for:</div>
-                    <div className="protection-plan-options">
-                        <div className="protection-plan-options-btn-wrapper"></div>
-                        <label className="protection-plan-options-btn">
-                            <span><input type="radio"></input></span>
-                            <span>OPTION 1</span>
-                        </label>
-                        <label className="protection-plan-options-btn">
-                            <span><input type="radio"></input></span>
-                            <span>OPTION 2</span>
-                        </label>
-                    </div>
+                    <ProtectionPlanBtns/>
                     <button className="protection-plan-WTE">
                         <span>What to Expect</span>
                         <svg>
@@ -40,7 +31,6 @@ const ProtectionPlan = () => {
                         </svg>
                     </button>
                 </div>
-            </div>
         </div>
     )
 }
