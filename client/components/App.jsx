@@ -34,10 +34,9 @@ const App = () => {
             </div>
             <Sidebar />
           </div>
-          <div className="accordionGrid">
-            <Accordion currentProduct={currentProduct}/>
-          </div>
         </div>
+        <Accordion currentProduct={currentProduct}/>
+      </div>
     </main>
   );
 };
