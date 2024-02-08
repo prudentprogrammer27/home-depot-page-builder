@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./SidebarJSX/Sidebar.jsx";
+import Sidebar from "./Sidebar/Sidebar.jsx";
 import Header from "./Header/Header.jsx";
 import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
-import ConsumerCardModal from "./SidebarJSX/ConsumerCardModal/ConsumerCardModal.jsx";
+import ConsumerCardModal from "./Sidebar/ConsumerCardModal/ConsumerCardModal.jsx";
 import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 
 const App = () => {

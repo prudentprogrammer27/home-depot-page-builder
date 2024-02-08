@@ -1,7 +1,5 @@
-import { useState } from "react";
-
 const FulfillmentTile = ({title, sub1, sub2, sub3, currTile, setCurrTile}) => {
-    let tileClass = "fulfillment-card";
+    let tileClass;
 
     (currTile == title) ? tileClass= "fulfillment-card selected" : tileClass = "fulfillment-card";
     

@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const ConsumerCard = ({priceDollars, priceCents, setCardModal}) => {
     let cardDiscountPrice = (priceDollars - 25) + "." + priceCents;
 

@@ -1,21 +1,20 @@
 import { useEffect, useState } from "react";
-import CartInfo from "./CartInfo.jsx";
 import ConsumerCard from "./ConsumerCard.jsx";
-import ItemFacts from "./ItemFacts.jsx";
 import LocationInfo from "./LocationInfo.jsx";
-import Price from "./Price.jsx";
 import ReturnInfo from "./ReturnInfo.jsx";
-import './sidebar.css'
+import ItemFacts from "./ItemFacts.jsx";
+import CartInfo from "./CartInfo.jsx";
+import Price from "./Price.jsx";
 import axios from "axios";
+import './sidebar.css'
 
 const Sidebar = ({currentProduct, setCardModal}) => {
     const [descriptions, setDescriptions] = useState([]);
     const [localStoreInfo, setLocalStore] = useState({});
     const [onlineStoreInfo, setOnlineStore] = useState({});
 
-    // there is an issue where the initial axios request in app jsx may fail to complete, this would set the price to 0.00
-    // as a currentProduct never gets assigned --------------------------------------------------------------------//
-
+    // there is an issue where the initial axios request in app jsx may fail to complete / component renders before completion,
+    // this would set the price to 0.00 as currentProduct never gets assigned so for now im initializing at 179
     const [priceDollars, setPriceDollars] = useState('179');
     const [priceCents, setPriceCents] = useState('00');
     
@@ -27,15 +26,17 @@ const Sidebar = ({currentProduct, setCardModal}) => {
         }
 
         async function fetchData() {
-            let rawDescriptionData = await axios.get('/api/descriptions/1');
+            let productId = (currentProduct.id == undefined) ? '1' : currentProduct.id;
+
+            let rawDescriptionData = await axios.get(`/api/descriptions/${productId}`);
             let descriptions = rawDescriptionData.data;
             setDescriptions(descriptions);
             
-            let rawLocalData = await axios.get('/api/store_local/1');
+            let rawLocalData = await axios.get(`/api/store_local/${productId}`);
             let localStore = rawLocalData.data[0];
             setLocalStore(localStore)
 
-            let rawOnlineData = await axios.get('/api/store_online/1');
+            let rawOnlineData = await axios.get(`/api/store_online/${productId}`);
             let onlineStore = rawOnlineData.data[0];
             setOnlineStore(onlineStore);
         }
@@ -43,8 +44,6 @@ const Sidebar = ({currentProduct, setCardModal}) => {
         fetchData()
 
     }, [])
-
-    //-----------------------------------------------------------------------------------------------------------//
 
     return (
         <div className="sidebar">
