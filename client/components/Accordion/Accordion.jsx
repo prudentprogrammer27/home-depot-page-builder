@@ -3,7 +3,7 @@ import { Element, scroller } from "react-scroll";
 import ProductDetailsContent from "./ProductDetailsContent/ProductDetailsContent.jsx";
 import SpecificationsContent from "./SpecificationsContent/SpecificationsContent.jsx";
 import QandAContent from "./Q&A/QandAContent.jsx";
-import CustomerReviewsContent from "./CustomerReviewsContent.jsx";
+import CustomerReviewsContent from "./CustomerReviewsContent/CustomerReviewsContent.jsx";
 import "./accordion.css";
 
 export default function Accordion({

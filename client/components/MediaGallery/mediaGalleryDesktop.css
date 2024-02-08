@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .gallery-container {
   /* border: solid;
   display: flex;
@@ -101,3 +102,7 @@
   color: white;
   font-size: 16px;
 }
+=======
+@import "react-image-gallery/styles/css/image-gallery.css";
+
+>>>>>>> main
