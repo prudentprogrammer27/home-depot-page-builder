@@ -34,7 +34,8 @@
     display: flex;
     width: 200px;
     height: 30px;
-    background-color: rgb(209, 143, 72);
+    /* background-color: rgb(209, 143, 72); */
     align-self: center;
     margin-left: 900px;
+    margin-top: 15px
 }

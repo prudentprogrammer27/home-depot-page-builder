@@ -8,13 +8,13 @@ import QAAnswer from './Q&AComponents/QAAnswer/Q&A-Answers.jsx';
 import QAFooter from './Q&AComponents/QAFooter/Q&A-Footer.jsx';
 
 const QandAContent = ({ currentProduct }) => {
-  const [ questions, setQuestions ] = useState([])
+  const [ questionInfo, setQuestionInfo ] = useState([]);
 
   useEffect(() => {
     const fetchQA = async () => {
       try {
         const response = await axios.get(`/api/customer_questions/${currentProduct.id}`);
-        setQuestions(response.data);
+        setQuestionInfo(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -31,33 +31,58 @@ const QandAContent = ({ currentProduct }) => {
         <QandAQuestions />
         <QAAnswer />
         <QAFooter />
-        {/* Q&A FOOTER */}
-        {/* <div id="qaDropDownFooter">
-          <div id="qaDropDownFooterSub">
-            <div id="qaDropDownFooterSubTop">
-              <div class="pagination">
-                <a href="#" class="page active">1</a>
-                <a href="#" class="page">2</a>
-                <a href="#" class="page">3</a>
-                <a href="#" class="page">4</a>
-                <a href="#" class="next">&gt;</a>
-              </div>
-            </div>
-            <div id="qaDropDownFooterBottom">Showing 1-4 of 33</div>
-          </div>
-        </div> */}
-
-        <h2>Q & A:</h2>
         <ul>
-          {questions.map((questions) => (
-            <li className="QandA" key={questions.question_content}>
-              {questions.question_content}
+          {questionInfo.map((questions) => (
+            <li className="QandA" key={questionInfo[0].question_content}>
+              {questionInfo[0].question_content}
             </li>
           ))}
-        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].question_content}>
+              {questionInfo[1].question_content}
+              </li>
+          )}
 
-       
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].user_name}>
+              {questionInfo[1].user_name}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].question_date}>
+              {questionInfo[1].question_date}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_content}>
+              {questionInfo[1].response_content}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_user_name}>
+              {questionInfo[1].response_user_name}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_date}>
+              {questionInfo[1].response_date}
+              </li>
+          )}
+        </ul>
+        </ul> 
       </div>
+      
     </div>
       
     );
