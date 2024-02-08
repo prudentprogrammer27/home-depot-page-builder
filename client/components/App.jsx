@@ -6,6 +6,7 @@ import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
 import ConsumerCardModal from "./SidebarJSX/ConsumerCardModal/ConsumerCardModal.jsx";
+import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
@@ -43,6 +44,7 @@ const App = () => {
         />
       )}
         <div className="item-wrapper bounding-box">
+          <NavigationBar/>
           <div className="picture-and-sidebar">
             <div className="img-gallery">
               <MediaGalleryDesktop
@@ -52,7 +54,7 @@ const App = () => {
             </div>
             <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
           </div>
-        <Accordion currentProduct={currentProduct}/>
+          <Accordion currentProduct={currentProduct}/>
         </div>
         <ConsumerCardModal isCardModal={isCardModal} setCardModal={setCardModal}/>
     </main>
