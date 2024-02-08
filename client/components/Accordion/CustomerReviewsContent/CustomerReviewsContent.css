@@ -1,0 +1,87 @@
+.accordion-wrapper {
+    padding: 10px;
+}
+section {
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.ratings-and-reviews {
+    color: #333;
+    padding: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.customer-review-header {
+    flex-wrap: wrap;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.column1-header{
+    display: flex;
+    width: 25%;
+    box-sizing: border-box!important;
+    float: left;
+    padding: 10px;
+    position: relative;
+}
+
+.list-review-overview{
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+    height: min-content;
+    justify-content: flex-start;
+    box-sizing: border-box;
+}
+
+.starsFromReviews{
+    display: inline-flex;
+    flex-direction: row;
+    margin-bottom: 3px;
+    box-sizing: border-box;
+    height: 1em;
+    width: 1em;
+}
+
+.ratings_avg{
+    display: inline-block;
+    font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 3.8em;
+    font-weight: 700;
+    line-height: 100%;
+    margin-right: 10px;
+}
+
+.outOfTotalReviews{
+    font-size: .8em;
+    box-sizing: border-box;
+    height: 1.6em;
+}
+
+.recommendWrapper {
+    clear: both;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+.reviewsOverviewHeader{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3px;
+}
+
+.percentageOfRec{
+    color: #333;
+    font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+}
+
+.recommendProduct{
+    font-size: 18.2px;
+}
