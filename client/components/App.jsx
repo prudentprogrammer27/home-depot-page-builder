@@ -5,6 +5,7 @@ import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
+import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
@@ -41,6 +42,7 @@ const App = () => {
         />
       )}
         <div className="item-wrapper bounding-box">
+          <NavigationBar/>
           <div className="picture-and-sidebar">
             <div className="img-gallery">
               <MediaGalleryDesktop
@@ -50,7 +52,7 @@ const App = () => {
             </div>
             <Sidebar currentProduct={currentProduct} />
           </div>
-        <Accordion currentProduct={currentProduct}/>
+          <Accordion currentProduct={currentProduct}/>
         </div>
     </main>
   );

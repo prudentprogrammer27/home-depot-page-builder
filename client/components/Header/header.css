@@ -157,42 +157,7 @@ body {
     display: inline-block;
   }
   
-  /* NAVIGATION BAR */
-  #navigationBar {
-    display: flex;
-    align-items: center; /* Vertically center items */
-    background-color: f5f5f5;
-    height: 40px;
-    width: 100%;
-  }
-  
-  #navBarContents {
-    display: flex;
-    justify-content: space-between;
-    background-color: f5f5f5;
-    height: 20px;
-    width: 1440px;
-    align-self: center;
-    margin-left: 50px;
-  }
-  
-  #navigationPath,
-  #navPlaceholder {
-    width: 50%;
-    max-height: 100px;
-    background-color: f5f5f5;
-    justify-content: space-around;
-    color: black;
-  }
-  #adminInfo {
-    width: 35%;
-    max-height: 100px;
-    background-color: f5f5f5;
-    justify-content: space-around;
-    color: black;
-    margin-top: 5px;
-    font: 10px helvetica;
-  }
+  /* */
   .box {
     width: 100%;
     height: 500px;
