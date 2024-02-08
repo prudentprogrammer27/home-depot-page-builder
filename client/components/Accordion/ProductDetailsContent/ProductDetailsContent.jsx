@@ -136,32 +136,31 @@ const ProductDetailsContent = ({ currentProduct }) => {
                 </ul>
               </div>
             </div>
-            {/* Additional content */}
           </div>
 
-          <div class="col__5-12">
-            <div class="grid info-guides-wrapper">
-              <div id="more-info" class="info-guides">
-                <h3 class="info-guides__additional-resource">Additional Resources</h3>
-                <h4 class="info-guides__title">From the Manufacturer</h4>
-                <ul class="document-list-wrapper list list--type-square">
-                  <li class="list__item">
+          <div className="right-content-wrapper">
+            <div className="resources-wrapper">
+              <div className="resources">
+                <h3>Additional Resources</h3>
+                <h4>From the Manufacturer</h4>
+                <ul className="list list--type-square">
+                  <li className="list__item">
                     <div id="product-overview">
                       <a class="list__link" href="https://images.thdstatic.com/catalog/pdfImages/ae/ae3a45df-aa1e-4461-82c8-b611f107c6e7.pdf" rel="noopener noreferrer" target="_blank">SDS</a>
                     </div>
                   </li>
-                  <li class="list__item">
-                    <div id="product-overview">
+                  <li className="list__item">
+                    <div className="product-overview">
                       <a class="list__link" href="https://images.thdstatic.com/catalog/pdfImages/27/27ae821e-be9c-451d-9173-7c86a2215a19.pdf" rel="noopener noreferrer" target="_blank">Warranty</a>
                     </div>
                   </li>
-                  <li class="list__item">
-                    <div id="product-overview">
+                  <li className="list__item">
+                    <div className="product-overview">
                       <a class="list__link" href="https://images.thdstatic.com/catalog/pdfImages/ae/ae7240ad-ba4d-4970-bf24-8ad9c67f26da.pdf" rel="noopener noreferrer" target="_blank">Use and Care Manual</a>
                     </div>
                   </li>
-                  <li class="list__item">
-                    <div id="product-overview">
+                  <li className="list__item">
+                    <div className="product-overview">
                       <a class="list__link" href="https://www.homedepot.com/c/Return_Policy" rel="noopener noreferrer" target="_blank">Return Policy</a>
                     </div>
                   </li>
