@@ -39,7 +39,6 @@ const CustomerReviewsChart = ({ ratings }) => {
 
     return (
         <div>
-            <h2>Customer Reviews</h2>
             <canvas id="homeDepotChart" width="400" height="200"></canvas>
         </div>
     );
