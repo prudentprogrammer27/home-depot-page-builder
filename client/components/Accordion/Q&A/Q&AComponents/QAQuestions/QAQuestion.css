@@ -1,0 +1,51 @@
+#qaQuestionCont {
+    display: flex;
+    width: 97%;
+    height: 75px;
+    background-color: blue;
+    border: 2px solid black;
+    padding: 10px;
+    margin-left: 10px;
+}
+#qaQuestionLeft {
+    display: flex;
+    display: flexbox;
+    align-self: center;;
+    width: 100%;
+    height: 100%;
+    background-color: yellow;
+    margin: 10px 10px 10px 10px;
+}
+#qaQuestionLeftTop {
+    width: 500px; 
+    height: 40px;
+    background-color: rgb(116, 29, 111);
+    margin: 10px;
+    align-self: center;
+}
+#qaQuestionLeftTopQuestion {
+    width: 200px;
+    height: 20px;
+    background-color: rgb(194, 114, 38);
+}
+#qaQuestionLeftBottom {
+
+    width: 200px;
+    height: 20px;
+    background-color: rgb(120, 193, 245);
+}
+/* #qaQuestionLeftBottomSub {} */
+#qaQuestionRight {
+    display: flex;
+    width: 200px;
+    height: 40px;
+    background-color: rgb(209, 143, 72);
+    align-self: center;
+    margin-left: 600px;
+}
+#qaQuestionRightSub {
+    width: 200px;
+    height: 20px;
+    background-color: rgb(116, 29, 111);
+    align-self: center;
+}
