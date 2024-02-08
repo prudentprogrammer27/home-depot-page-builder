@@ -93,7 +93,9 @@ const MediaGalleryDesktop = ({
     <>
       <div className="gallery-container">
         <div className="gallery-header">
-          <div className="gallery-best-seller">BEST SELLER</div>
+          <div className="gallery-best-seller">
+            <p className="gallery-best-seller-content">Best Seller</p>
+          </div>
           <div className="gallery-manufacturer">
             {currentProduct.manufacturer}
           </div>

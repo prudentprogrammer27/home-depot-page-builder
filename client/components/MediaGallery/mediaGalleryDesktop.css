@@ -13,6 +13,7 @@
   text-align: left;
   border: -1px solid black;
   background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .gallery-header {
@@ -24,6 +25,15 @@
 .gallery-best-seller {
   /* border: solid; */
   display: flex;
+}
+.gallery-best-seller-content {
+  border: solid;
+  background-color: #3e7697;
+  color: white;
+  font-size: small;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
 }
 
 .gallery-manufacturer {

@@ -8,7 +8,7 @@ import "./accordion.css";
 
 export default function Accordion({
   currentProduct,
-  toggleReviewsActive,
+  // toggleReviewsActive,
   panelToShow,
 }) {
   const [panels, setPanels] = useState([
@@ -40,6 +40,7 @@ export default function Accordion({
         return { ...panel, isActive: false }; // Collapse other panels
       }
     });
+
     setPanels(updatedPanels);
 
     // Scroll to the last panel when "Customer Reviews" is clicked
@@ -61,7 +62,7 @@ export default function Accordion({
             title={panel.title}
             isActive={panel.isActive}
             currentProduct={currentProduct}
-            toggleReviewsActive={toggleReviewsActive}
+            // toggleReviewsActive={toggleReviewsActive}
             togglePanel={() => togglePanel(index)}
           />
         ))}
