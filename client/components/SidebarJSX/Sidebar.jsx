@@ -8,10 +8,11 @@ import ReturnInfo from "./ReturnInfo.jsx";
 import './sidebar.css'
 import axios from "axios";
 
-const Sidebar = ({currentProduct}) => {
+const Sidebar = ({currentProduct, setCardModal}) => {
     const [descriptions, setDescriptions] = useState([]);
     const [localStoreInfo, setLocalStore] = useState({});
     const [onlineStoreInfo, setOnlineStore] = useState({});
+
     // there is an issue where the initial axios request in app jsx may fail to complete, this would set the price to 0.00
     // as a currentProduct never gets assigned --------------------------------------------------------------------//
 
@@ -48,7 +49,7 @@ const Sidebar = ({currentProduct}) => {
     return (
         <div className="sidebar">
             <Price priceDollars={priceDollars} priceCents={priceCents}/>
-            <ConsumerCard priceDollars={priceDollars} priceCents={priceCents}/>
+            <ConsumerCard priceDollars={priceDollars} priceCents={priceCents} setCardModal={setCardModal}/>
             <ItemFacts descriptions={descriptions}/>
             <LocationInfo localStoreInfo={localStoreInfo}/>
             <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>

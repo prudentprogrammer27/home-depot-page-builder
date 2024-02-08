@@ -5,10 +5,12 @@ import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
+import ConsumerCardModal from "./SidebarJSX/ConsumerCardModal/ConsumerCardModal.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [modal, setModal] = useState(false);
+  const [isCardModal, setCardModal] = useState(false);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -48,10 +50,11 @@ const App = () => {
                 toggleModal={toggleModal}
               />
             </div>
-            <Sidebar currentProduct={currentProduct} />
+            <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
           </div>
         <Accordion currentProduct={currentProduct}/>
         </div>
+        <ConsumerCardModal isCardModal={isCardModal} setCardModal={setCardModal}/>
     </main>
   );
 };
