@@ -10,24 +10,32 @@ button {
   margin-bottom: 15px;
 }
 
-.sidebar {
-  flex-wrap: wrap;
-  position: relative;
-  flex: 1 1 auto;
-  /* background-color: rgb(190, 185, 185); */
-  /* min-width: 500px; */
-  width: 42%;
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    flex-wrap: wrap;
+    position: relative;
+    flex: 1 1 auto;
+    flex-grow: 1;
+    /* background-color: rgb(190, 185, 185); */
+    /* min-width: 500px; */
+    width: 42%;
+  }
 }
 
 .item-facts {
   margin-bottom: 15px;
   list-style-type: disc;
   background-color: #fff;
+  font-family: helvetica-neue-55-roman,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .item-facts ul {
   margin: 0 0 0 20px;
   padding-inline-start: 0px;
+}
+
+.item-facts a {
+  color:#121111
 }
 
 .sale-icon{
@@ -48,7 +56,7 @@ button {
 
 .price-dollar-sign {
   font-size: 24px;
-  font-family: Helvetica;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: bold;
   vertical-align: 1ex;
 }
@@ -58,19 +66,30 @@ button {
 }
 
 .price-dollars {
-  font-family: Helvetica;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-feature-settings: normal;
+  font-variation-settings: normal;
   font-size: 44px;
   font-weight: bold;
 }
 
 .price-cents {
-  font-family: Helvetica;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 24px;
   font-weight: bold;
   vertical-align: 1ex;
 }
 
+.sale-limit {
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.sale-price-original {
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
 .sale-discount-amount {
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   color: #009a4f;
 }
 
@@ -90,6 +109,11 @@ button {
   text-decoration: none;
   color: #3e7697;
   font-size: 14px;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.consumer-card.info {
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .consumer-card-png {
@@ -109,11 +133,17 @@ button {
   margin: 0;
 }
 
+.consumer-card.info span {
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-weight: 700
+}
+
 .fulfillment-tiles.fulfillment-headers {
   display: flex;
   flex-direction: row;
   padding-bottom: 8px;
   padding-right: 5px;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji
 }
 
 .fulfillment-header-pickup {
@@ -197,17 +227,19 @@ button {
 .fulfillment-card-title {
   min-height: 21px;
   font-size: 20px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   margin-right: -2px;
   padding: 15px 0 10px;
 }
 
 .card-subtitle-qty {
   min-height: 21px;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .card-subtitle-qty span {
   color:#00873c;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .card-subtitle-special-msg {
@@ -216,6 +248,7 @@ button {
   margin-top: auto;
   color:#00873c;
   font-weight: bold;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 
@@ -225,6 +258,7 @@ button {
   display: flex;
   flex-direction: column;
   background-color: #fff;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .location-info-fieldset {
@@ -233,6 +267,7 @@ button {
   padding: 0;
   font-size: 16px;
   line-height: 2;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
 }
 
 .location-info-fieldset legend{
@@ -278,11 +313,16 @@ button {
 }
 
 .cart-info-truck-msg {
-  font-family: helvetica;
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-size: 14px;
   line-height: 18px;
   padding-right: 10px;
   padding-top: 10px;
+}
+
+.cart-info-truck-msg span {
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 600;
 }
 
 .cf-truck-icon {
@@ -340,14 +380,15 @@ button {
 }
 
 .protection-plan-info-title {
-  font-weight: bold;
+  font-weight: 700;
   font-size: 22px;
-  font-family: helvetica;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   line-height: 1.25;
 }
 
 .protection-plan-info-text {
   font-size: 16px;
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .protection-plan-options {
@@ -371,6 +412,7 @@ button {
 
 .prot-option-title {
   margin-left: 30px;
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .protection-plan-btn-wrap input{
@@ -394,6 +436,10 @@ button {
   justify-content: flex-start;
   align-items: center;
   width: fit-content;
+}
+
+.protection-plan-WTE span {
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .protection-plan-WTE span{
@@ -449,6 +495,7 @@ button {
   border: 1px solid #ccc;
   box-sizing: border-box;
   float: left;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji; 
   font-size: 20px;
   font-weight: 700;
   height: 42px;
@@ -463,6 +510,7 @@ button {
   flex-direction: row;
   font-size: 16px;
   font-weight: bold;
+  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
   color: whitesmoke;
 }
 
@@ -496,9 +544,13 @@ button {
 }
 
 .return-info.message-title {
-  font-family: helvetica;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: bold;
   font: 1.8rem;
+}
+
+.return-info.return-info.message-text {
+  font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
 .return-info.message-text span.bold{

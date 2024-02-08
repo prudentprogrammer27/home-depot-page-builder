@@ -1,10 +1,12 @@
-const ItemFacts =()=> {
+const ItemFacts = ({descriptions}) => {
+
+    console.log(descriptions)
     return (
         <div className="item-facts sb-parent">
             <ul>
-                <li>Up to 25% Faster Driving and Up to 50% More Torque</li>
-                <li>{'Includes: (2) 2.0 Ah High Performance Batteries, Charger, and Bag'}</li>
-                <li>{'Over 300 ONE+ Products – All Work With Any RYOBI ONE+ 18V Battery'}</li>
+                {descriptions.map((description)=> {
+                    return <li key={description.id}>{description.fact}</li>
+                })}
                 <li><a href="daa">View More Details</a></li>
             </ul>
         </div>

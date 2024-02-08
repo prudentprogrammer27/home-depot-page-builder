@@ -18,7 +18,7 @@ const FulfillmentTile = ({title, sub1, sub2, sub3, currTile, setCurrTile}) => {
                 <div className="fulfillment-card-subtitle">
                     <div><b>{sub1}</b></div>
                     <div className="card-subtitle-qty">
-                        <span>{sub2}</span>
+                        <span>{sub2}&nbsp;</span>
                         {sub3}
                     </div>
                 </div>

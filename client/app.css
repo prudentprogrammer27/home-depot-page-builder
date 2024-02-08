@@ -22,17 +22,19 @@ body {
   }
 }
 
-.img-gallery {
-  /* min-width: 1024px; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-content: center;
-  position: relative;
-  width: 58%;
-  height: 100%;
-  text-align: center;
-  border: -1px solid black;
+@media screen and (min-width: 1024px) {
+  .img-gallery {
+    /* min-width: 1024px; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    position: relative;
+    width: 58%;
+    height: 100%;
+    text-align: center;
+    border: -1px solid black;
+  }
 }
 
 .img-gallery span {
