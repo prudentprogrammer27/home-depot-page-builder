@@ -159,14 +159,21 @@ button {
   width: 50%;
 }
 
+.fulfillment-header-pickup span {
+  color: #3e7697;
+}
+
 .fulfillment-header-delivery {
   display: flex;
   align-items: end;
   margin-right: 0;
   flex-direction: row;
-  justify-content: space-between;
   max-width: 165px;
   width: 50%;
+}
+
+.fulfillment-header-delivery span {
+  color: #3e7697;
 }
 
 .cart-info.fulfillment-cards {
@@ -560,11 +567,19 @@ button {
 .return-info.message-title {
   font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   font-weight: bold;
-  font: 1.8rem;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 .return-info.return-info.message-text {
   font-family: helvetica-neue,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
+}
+
+.return-info.return-info.message-text a {
+  margin-left: 5px;
+  color: #3e7697;
+  text-decoration: none;
 }
 
 .return-info.message-text span.bold{
