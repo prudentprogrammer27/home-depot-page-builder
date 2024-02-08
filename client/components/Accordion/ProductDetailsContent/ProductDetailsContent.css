@@ -50,12 +50,12 @@
 }
 
 .grid-content{
-    box-sizing: border-box;
+    display: flex;
     flex-wrap: wrap;
-    width: 100%;
 }
 
 .left-content-wrapper{
+    box-sizing: border-box!important;
     padding-left: 0;
     width: 58.3333333333%;
 }
@@ -111,4 +111,24 @@
     max-height: 100%;
     width: auto;
     height: auto;
+}
+
+.right-content-wrapper{
+    box-sizing: border-box!important;
+    padding: 10px;
+    position: relative;
+    flex-wrap: wrap;
+    width: 41.6666666667%;
+}
+
+.resources-wrapper{
+    border: 1px solid #ccc;
+
+    width: auto;
+    padding: 10px;
+    flex-wrap: wrap;
+}
+
+.resources{
+
 }
