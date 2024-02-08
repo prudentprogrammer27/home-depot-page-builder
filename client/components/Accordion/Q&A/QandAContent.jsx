@@ -1,15 +1,20 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './QandAContent.css'
+import QAHeader from './Q&AComponents/QAHeader/Q&A-Header.jsx';
+import Navigation from './Q&AComponents/QANavigation/Q&A-Navigation.jsx';
+import QandAQuestions from './Q&AComponents/QAQuestions/Q&A-Question.jsx';
+import QAAnswer from './Q&AComponents/QAAnswer/Q&A-Answers.jsx';
+import QAFooter from './Q&AComponents/QAFooter/Q&A-Footer.jsx';
 
 const QandAContent = ({ currentProduct }) => {
-  const [ questions, setQuestions ] = useState([])
+  const [ questionInfo, setQuestionInfo ] = useState([]);
 
   useEffect(() => {
     const fetchQA = async () => {
       try {
         const response = await axios.get(`/api/customer_questions/${currentProduct.id}`);
-        setQuestions(response.data);
+        setQuestionInfo(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -20,114 +25,88 @@ const QandAContent = ({ currentProduct }) => {
 
  return (
     <div>
-        {/* QA HEADER */}
       <div id="accordion-qa">
-        <div id="qaHeaderCont">
-          <div id="qaHeaderSlim">
-            <div id="qaHeaderLeft">
-              <div id="qaHeaderLeftSub">
-                <div id="qaHeaderLeftSubLeft">33</div>
-                <div id="qaHeaderLeftSubRight">Questions</div>
-              </div>
-            </div>
-              <div id="qaHeaderMiddle">
-                <input
-                  id="searchStuff"
-                  type="text"
-                  // id="searchInput"
-                  placeholder="   Search Questions & Answers"
-                />
-                <button onClick={() => performSearch()}>
-                  <img src="\components\Accordion\Q&A\Q&A-images\Search-glass.png" alt="Search Icon" />
-                </button>
-              </div>
-              <div id="qaHeaderRight">Ask a Question</div>
-          </div>
-        </div>
-        {/* NAVIGATION BAR*/}
-        <div id="qaNavCont">
-          <div id="qaNavSlim">
-            <div id="qaNavLeft">
-              <div id="qaNavLeftSub">Showing 1-4 of 33</div>
-            </div>
-            <div id="qaNavRight">
-              <div id="qaNavRightDropDown">
-                <select id="dropdown">
-                  <option value="newest">Newest Questions</option>
-                  <option value="oldest">Oldest Questions</option>
-                  <option value="answered">Most Answered</option>
-                  <option value="helpful">Most Helpful</option>
-                  <option value="featured">Featured Questions</option>
-                  <option value="answer">Can you answer these questions?</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </div>
-        {/* QUESTION DISPLAY */}
-        <div id="qaQuestionCont">
-          <div id="qaQuestionLeft">
-            <div id="qaQuestionLeftTop">
-              <div id="qaQuestionLeftTopQuestion"></div>
-            <div id="qaQuestionLeftBottom">
-              <div id="qaQuestionLeftBottomSub"></div>
-            </div>
-            </div>
-          <div id="qaQuestionRight">
-            <div id="qaQuestionRightSub">
-              <div id="qaQuestionRightCount"></div>
-            </div>
-          </div>
-          </div>
-        </div>
-       
-        {/* ANSWER BOX (switch statement) */}
-        <div id="qaAnswerCont">
-          <div id="qaAnswerSlim">
-            <div id="qaAnswerTop">
-              <div id="qaAnswerTopLeft"></div>
-            </div>
-            <div id="qaAnswerMiddle">
-              <div id="qaAnswerMiddleTop"></div>
-              <div id="qaAnswerMiddleBottom"></div>
-              <div id="qaAnswerBottom">
-                <div id="qaAnswerBottomLeft"></div>
-                <div id="qaAnswerBottomRight"></div>
-              </div>
-            </div>
-          </div> 
-        </div>
-        {/* Q&A FOOTER */}
-        <div id="qaDropDownFooter">
-          <div id="qaDropDownFooterSub">
-            <div id="qaDropDownFooterSubTop">
-              <div class="pagination">
-                {/* <a href="#" class="prev">&lt;</a> */}
-                <a href="#" class="page active">1</a>
-                <a href="#" class="page">2</a>
-                <a href="#" class="page">3</a>
-                <a href="#" class="page">4</a>
-                <a href="#" class="next">&gt;</a>
-              </div>
-            </div>
-            <div id="qaDropDownFooterBottom">Showing 1-4 of 33</div>
-          </div>
-        </div>
-
-        <h2>Q & A:</h2>
+        <QAHeader />
+        <Navigation />
+        <QandAQuestions />
+        <QandAQuestions />
+        <QandAQuestions />
+        <QandAQuestions />
+        <QAAnswer />
+        <QAFooter />
         <ul>
-          {questions.map((questions) => (
-            <li className="QandA" key={questions.question_content}>
-              {questions.response_content}
+          {questionInfo.map((questions) => (
+            <li className="QandA" key={questionInfo[0].question_content}>
+              {questionInfo[0].question_content}
             </li>
           ))}
-        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].question_content}>
+              {questionInfo[1].question_content}
+              </li>
+          )}
 
-       
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].user_name}>
+              {questionInfo[1].user_name}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].question_date}>
+              {questionInfo[1].question_date}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_content}>
+              {questionInfo[1].response_content}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_user_name}>
+              {questionInfo[1].response_user_name}
+              </li>
+          )}
+        </ul>
+        <ul>
+          {questionInfo.length > 0 && (
+            <li className="QandA" key={questionInfo[1].response_date}>
+              {questionInfo[1].response_date}
+              </li>
+          )}
+        </ul>
+        </ul> 
       </div>
+      
     </div>
       
     );
 };
 
 export default QandAContent;
+
+
+// <div className="zone-card">
+//       <section className={`panel ${isActive ? 'active' : ''}`} onClick={togglePanel} role="button" tabIndex="0">
+//         <div className="panel-header">
+//           <h3>{title}</h3>
+//           <img
+//             src="https://assets.thdstatic.com/images/v1/caret-brand-small.svg"
+//             alt="caret"
+//             className={`toggleImg ${isActive ? 'rotate' : ''}`}
+//             height="16"
+//             width="16"
+//             loading="lazy"
+//           />
+//         </div>
+//         {isActive && renderContent()}
+//       </section>
+//       </div>
