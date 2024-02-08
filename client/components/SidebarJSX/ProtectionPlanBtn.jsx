@@ -33,7 +33,7 @@ const ProtectionPlanBtn = ({title, currOpt, setCurrOpt}) => {
                     </svg>
                 </span>
             </span>
-            <span className="prot-option-title">{title}</span>
+            <span className="prot-option-title"><p>{title}</p></span>
         </label>
     )
 }

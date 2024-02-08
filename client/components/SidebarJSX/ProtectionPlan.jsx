@@ -22,7 +22,7 @@ const ProtectionPlan = () => {
                     <ProtectionPlanBtns/>
                     <button className="protection-plan-WTE">
                         <span>What to Expect</span>
-                        <svg>
+                        <svg viewBox="0 0 24 24">
                             <path d="M13.125 7.125a1.125 1.125 0 1 1-2.25 0 1.125 1.125 0 0 1 2.25
                          0Zm0 2.625V18h-2.25V9.75h2.25Z M12 0C5.373 0 0 5.373 0 12s5.373 12 12
                           12 12-5.373 12-12S18.627 0 12 0ZM2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75

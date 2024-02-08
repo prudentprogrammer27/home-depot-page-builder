@@ -10,6 +10,8 @@ import axios from "axios";
 
 const Sidebar = ({currentProduct}) => {
     const [descriptions, setDescriptions] = useState([]);
+    const [localStoreInfo, setLocalStore] = useState({});
+    const [onlineStoreInfo, setOnlineStore] = useState({});
     // there is an issue where the initial axios request in app jsx may fail to complete, this would set the price to 0.00
     // as a currentProduct never gets assigned --------------------------------------------------------------------//
 
@@ -27,6 +29,14 @@ const Sidebar = ({currentProduct}) => {
             let rawDescriptionData = await axios.get('/api/descriptions/1');
             let descriptions = rawDescriptionData.data;
             setDescriptions(descriptions);
+            
+            let rawLocalData = await axios.get('/api/store_local/1');
+            let localStore = rawLocalData.data[0];
+            setLocalStore(localStore)
+
+            let rawOnlineData = await axios.get('/api/store_online/1');
+            let onlineStore = rawOnlineData.data[0];
+            setOnlineStore(onlineStore);
         }
 
         fetchData()
@@ -40,8 +50,8 @@ const Sidebar = ({currentProduct}) => {
             <Price priceDollars={priceDollars} priceCents={priceCents}/>
             <ConsumerCard priceDollars={priceDollars} priceCents={priceCents}/>
             <ItemFacts descriptions={descriptions}/>
-            <LocationInfo/>
-            <CartInfo/>
+            <LocationInfo localStoreInfo={localStoreInfo}/>
+            <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>
             <ReturnInfo/>
         </div>
     )

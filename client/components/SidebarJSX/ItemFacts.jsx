@@ -1,6 +1,4 @@
 const ItemFacts = ({descriptions}) => {
-
-    console.log(descriptions)
     return (
         <div className="item-facts sb-parent">
             <ul>
