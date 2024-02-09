@@ -22,74 +22,17 @@ const QandAContent = ({ currentProduct }) => {
 
     fetchQA();
   }, [currentProduct]);
-  console.log('parentDb', questionDB)
-  console.log('parentCP', currentProduct)
+
  return (
     <div>
       <div id="accordion-qa">
         <QAHeader />
         <Navigation />
         <QandAQuestions questionDB={questionDB} />
-        {/* <QandAQuestions currentProduct={currentProduct}/>
-        <QandAQuestions currentProduct={currentProduct}/>
-        <QandAQuestions currentProduct={currentProduct}/> */}
-        <QAAnswer />
+        <QAAnswer questionDB={questionDB}/>
         <QAFooter />
-        {/* <ul>
-          {questionDB.map((questions) => (
-            <li className="QandA" key={questionDB[0].question_content}>
-              {questionDB[0].question_content}
-            </li>
-          ))}
-        </ul> */}
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].question_content}>
-              {questionDB[1].question_content}
-              </li>
-          )}
-
-        </ul>
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].user_name}>
-              {questionDB[1].user_name}
-              </li>
-          )}
-        </ul>
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].question_date}>
-              {questionDB[1].question_date}
-              </li>
-          )}
-        </ul>
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].response_content}>
-              {questionDB[1].response_content}
-              </li>
-          )}
-        </ul>
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].response_user_name}>
-              {questionDB[1].response_user_name}
-              </li>
-          )}
-        </ul>
-        <ul>
-          {questionDB.length > 0 && (
-            <li className="QandA" key={questionDB[1].response_date}>
-              {questionDB[1].response_date}
-              </li>
-          )}
-        </ul>
-        
       </div>
-      
     </div>
-      
     );
 };
 
