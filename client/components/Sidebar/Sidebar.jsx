@@ -46,14 +46,14 @@ const Sidebar = ({currentProduct, setCardModal}) => {
     }, [])
 
     return (
-        <div className="sidebar">
-            <Price priceDollars={priceDollars} priceCents={priceCents}/>
-            <ConsumerCard priceDollars={priceDollars} priceCents={priceCents} setCardModal={setCardModal}/>
-            <ItemFacts descriptions={descriptions}/>
-            <LocationInfo localStoreInfo={localStoreInfo}/>
-            <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>
-            <ReturnInfo/>
-        </div>
+            <div className="sidebar">
+                <Price priceDollars={priceDollars} priceCents={priceCents}/>
+                <ConsumerCard priceDollars={priceDollars} priceCents={priceCents} setCardModal={setCardModal}/>
+                <ItemFacts descriptions={descriptions}/>
+                <LocationInfo localStoreInfo={localStoreInfo}/>
+                <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>
+                <ReturnInfo/>
+            </div>
     )
 }
 
