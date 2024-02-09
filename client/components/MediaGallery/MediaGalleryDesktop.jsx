@@ -1,6 +1,7 @@
 import "./mediaGalleryDesktop.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useAppContext } from "client/components/AppContext.jsx";
 
 const MediaGalleryDesktop = ({
   currentProduct,
@@ -11,6 +12,11 @@ const MediaGalleryDesktop = ({
 }) => {
   const [mainImage, setMainImage] = useState("");
   const [images, setImages] = useState([]);
+  const { averageRating, totalReviews, totalQuestions } = useAppContext();
+
+  const starNum = Math.round(parseFloat(averageRating));
+
+  //     averageRating, totalReviews,
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +38,22 @@ const MediaGalleryDesktop = ({
     };
     fetchData();
   }, [currentProduct]);
+
+  const checkReviewStatus = (number) => {
+    let basePath = "./components/Accordion/CustomerReviewsContent/imgStar/";
+    let fileExtension = "-star-pic.png";
+    if (!number) {
+      return "No Current Rating";
+    } else {
+      return (
+        <img
+          style={{ width: `${starNum * 20} + 10}px` }}
+          className="star-icon"
+          src={`${basePath}${number}${fileExtension}`}
+        ></img>
+      );
+    }
+  };
 
   const showThumbnails = () => {
     const visibleThumbnails = images.slice(0, 5); // limit to 6
@@ -107,13 +129,16 @@ const MediaGalleryDesktop = ({
               className="gallery-review-summary"
               onClick={handleReviewsClick}
             >
-              ⭐️⭐️⭐️⭐️⭐️ (15) Reviews Summary
+              <span className="gallery-review-icon-container">
+                {checkReviewStatus(starNum)}
+              </span>
+              {`(${totalReviews})`}
             </div>
             <div
               className="gallery-questions-summary"
               onClick={handleQuestionsClick}
             >
-              Questions & Answers (15)
+              Questions & Answers {`(${totalQuestions})`}
             </div>
           </div>
         </div>
@@ -124,6 +149,17 @@ const MediaGalleryDesktop = ({
           <div className="gallery-main-image">
             <img src={mainImage} alt="Main Image" onClick={handleClick} />
           </div>
+        </div>
+        <div className="gallery-share-print-container">
+          Share & Print
+          <button className="gallery-share-button">
+            <img
+              src="./components/MediaGallery/icons/shareIcon.png"
+              alt="share arrow button"
+            ></img>
+            Share
+          </button>
+          <button className="gallery-print-button"></button>
         </div>
       </div>
     </>
