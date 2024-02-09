@@ -1,7 +1,5 @@
-import { useState } from "react";
-
 const FulfillmentTile = ({title, sub1, sub2, sub3, currTile, setCurrTile}) => {
-    let tileClass = "fulfillment-card";
+    let tileClass;
 
     (currTile == title) ? tileClass= "fulfillment-card selected" : tileClass = "fulfillment-card";
     
@@ -18,7 +16,7 @@ const FulfillmentTile = ({title, sub1, sub2, sub3, currTile, setCurrTile}) => {
                 <div className="fulfillment-card-subtitle">
                     <div><b>{sub1}</b></div>
                     <div className="card-subtitle-qty">
-                        <span>{sub2}</span>
+                        <span>{sub2}&nbsp;</span>
                         {sub3}
                     </div>
                 </div>

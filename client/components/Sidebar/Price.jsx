@@ -1,17 +1,4 @@
-import { useState, useEffect } from "react";
-
-const Price =({currentProduct})=> {
-    const [priceDollars, setPriceDollars] = useState('179');
-    const [priceCents, setPriceCents] = useState('00');
-    
-    // useEffect(()=> {
-    //     if(currentProduct.length !== 0) {
-    //         let splitPrice = currentProduct.price.split('.');
-    //         setPriceDollars(splitPrice[0]);
-    //         setPriceCents(splitPrice[1]);
-    //     }
-    // }, [])
-
+const Price =({priceDollars, priceCents})=> {
     return (
         <div className="price-wrapper sb-parent">
             <img className="sale-icon" src="https://assets.thdstatic.com/images/v1/Value-Pricing-Special-Buy.svg"></img>

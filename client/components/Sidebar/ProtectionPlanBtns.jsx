@@ -6,8 +6,8 @@ const ProtectionPlanBtns = () => {
 
     return (
         <div className="protection-plan-options">
-            <ProtectionPlanBtn title={'Option 1'} currOpt={currOpt} setCurrOpt={setCurrOpt}/>
-            <ProtectionPlanBtn title={'Option 2'} currOpt={currOpt} setCurrOpt={setCurrOpt}/>
+            <ProtectionPlanBtn title={'2 year / $30.00'} currOpt={currOpt} setCurrOpt={setCurrOpt}/>
+            <ProtectionPlanBtn title={'No Thanks'} currOpt={currOpt} setCurrOpt={setCurrOpt}/>
         </div>
     )
 }

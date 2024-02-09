@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from "react";
-import Sidebar from "./SidebarJSX/Sidebar.jsx";
+import Sidebar from "./Sidebar/Sidebar.jsx";
 import Header from "./Header/Header.jsx";
 import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
+import ConsumerCardModal from "./Sidebar/ConsumerCardModal/ConsumerCardModal.jsx";
+import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [modal, setModal] = useState(false);
+  const [isCardModal, setCardModal] = useState(false);
   // const [isReviewsActive, setIsReviewsActive] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [panelToShow, SetPanelToShow] = useState(null);
@@ -53,6 +56,7 @@ const App = () => {
         />
       )}
       <div className="item-wrapper bounding-box">
+      <NavigationBar/>
         <div className="picture-and-sidebar">
           <div className="img-gallery">
             <MediaGalleryDesktop
@@ -63,7 +67,7 @@ const App = () => {
               scrollToPanel={scrollToPanel}
             />
           </div>
-          <Sidebar currentProduct={currentProduct} />
+          <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
         </div>
         <Accordion
           currentProduct={currentProduct}
@@ -74,6 +78,7 @@ const App = () => {
           isScrolling={isScrolling}
         />
       </div>
+      <ConsumerCardModal isCardModal={isCardModal} setCardModal={setCardModal}/>
     </main>
   );
 };

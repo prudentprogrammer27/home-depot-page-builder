@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const AddToCart = () => {
     const [bgColor, setBgColor] = useState('#f96302')
-    const [value, setValue] = useState('1');
+    const [value, setValue] = useState(1);
 
     const handleHover = () => {
         (bgColor === '#f96302') ? setBgColor('rgb(33 33 32)') : setBgColor('#f96302');
@@ -12,13 +12,21 @@ const AddToCart = () => {
         setValue(e.target.value)
     }
 
+    const handleCartNumber = (e) => {
+        if(e.target.id == 'a2c-decrement') {
+            if(value != 0) setValue(value - 1);
+        } else {
+            setValue(value + 1);
+        }
+    }
+
     return (
         <div className="add-to-cart-wrapper sb-parent">
             <div className="add-to-cart-options">
                 <div className="a2c-quantity-wrapper">
-                    <button readOnly={true} className="a2c-quantity-btn">-</button>
+                    <button id='a2c-decrement' onClick={handleCartNumber} readOnly={true} className="a2c-quantity-btn">-</button>
                     <input onChange={handleUserInput} className="a2c-quantity-btn" inputMode="numeric" min={0} max={3} maxLength={4} pattern="[0-9]*" value={value}></input>
-                    <button readOnly={true} className="a2c-quantity-btn">+</button>
+                    <button id='a2c-increment' onClick={handleCartNumber} readOnly={true} className="a2c-quantity-btn">+</button>
                 </div>
                 <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="a2c-button-wrapper" style={{backgroundColor: bgColor}}>
                     <button className="a2c-btn">

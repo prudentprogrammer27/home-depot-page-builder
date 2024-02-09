@@ -1,12 +1,10 @@
-import { useState } from "react";
-
 const ProtectionPlanBtn = ({title, currOpt, setCurrOpt}) => {
-    let fillColor = "white";
-    let border = '1px solid black';
-    let bgColor = '';
+    let fillColor;
+    let border;
+    let bgColor;
 
     if(currOpt == title) {
-        fillColor= "#f96302";
+        fillColor = "#f96302";
         border = '';
         bgColor = 'rgb(253 216 192)'
     } else {
@@ -15,11 +13,10 @@ const ProtectionPlanBtn = ({title, currOpt, setCurrOpt}) => {
         bgColor = ''
     }
         
-
     const handleOptSelect = () => {
         setCurrOpt(title);
     }
-    console.log
+
     return (
         <label onClick={handleOptSelect} className="protection-plan-options-btn">
             <span className="protection-plan-btn-wrap" style={{backgroundColor: bgColor}}>
@@ -33,7 +30,7 @@ const ProtectionPlanBtn = ({title, currOpt, setCurrOpt}) => {
                     </svg>
                 </span>
             </span>
-            <span className="prot-option-title">{title}</span>
+            <span className="prot-option-title"><p>{title}</p></span>
         </label>
     )
 }

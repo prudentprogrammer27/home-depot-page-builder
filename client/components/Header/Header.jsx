@@ -52,17 +52,6 @@ const Header = () => {
             </div>
           </div>
         </div>
-        <div id="navigationBar">
-          <div id="navBarContents">
-            <div id="navigationPath">... / Tools / Power Tools / Drills / Impact Drivers </div>
-            <div id="navPlaceholder"></div>
-            <div id="adminInfo">
-              Internet # 314109290
-              Model # PBLCK01K
-              Store SKU # 1005767796
-            </div>
-          </div>
-        </div>
       </header>
     </>
   );
