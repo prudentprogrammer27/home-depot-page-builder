@@ -2,7 +2,7 @@ import FulfillmentTiles from "./FulfillmentTiles.jsx";
 import AddToCart from "./AddToCart.jsx";
 import ProtectionPlan from "./ProtectionPlan.jsx";
 
-const CartInfo = ({localStoreInfo, onlineStoreInfo}) => {
+const CartInfo = ({localStoreInfo, onlineStoreInfo, setItemsInCart}) => {
     return (
         <div className="cart-info-wrapper">
             <FulfillmentTiles localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>
@@ -13,7 +13,7 @@ const CartInfo = ({localStoreInfo, onlineStoreInfo}) => {
                 </div>
             </div>
             <ProtectionPlan/>
-            <AddToCart/>
+            <AddToCart setItemsInCart={setItemsInCart}/>
         </div>
     )
 }

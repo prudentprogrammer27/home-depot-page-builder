@@ -28,7 +28,8 @@
     width: 200px;
     height: 20px;
     background-color: white;
-    justify-content: center;
+    margin-left: 25px;
+    font: 14px ''
 }
 #qaAnswerMiddle {
     width: 1340px;
@@ -40,33 +41,33 @@
 #qaAnswerMiddleTop {
     width: 520px;
     height: 95px;
-    background-color: rgb(116, 29, 29);
+    background-color: white;
     align-self: center;
     margin-top: 15px;
     margin-left: 15px;
+    font: 14px "Helvetica-Neue"
 }
-#qaAnswerMiddleTopLeft {
+/* #qaAnswerMiddleTopLeft {
     display: flex;
-    width: 25px;
-    height: 25px;
+
     background-color: white;
     justify-content: center;
     align-items: center;
-}
+} */
 #qaAnswerMiddleTopBottom {
     display: flex;
     display: block;
     height: 25px;
     width: 200px;
     background-color: white;
-    margin-top: 45px;
+    margin-top: 15px;
 }
 #qaAnswerMiddleTopBottomLeft {
     display: flex;
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-color: rgb(157, 27, 200);
+    background-color: white;
     align-items: center;
     justify-content: center;
 }
@@ -75,7 +76,7 @@
     display: inline-block;
     width: 50px;
     height: 20px;
-    background-color: rgb(228, 255, 192);
+    background-color: white;
     align-items: center;
     justify-content: center;
 }
@@ -84,10 +85,10 @@
     display: inline-block;
     width: 75px;
     height: 20px;
-    background-color: rgb(192, 255, 246);
+    background-color: white;
     align-items: center;
     justify-content: center;
-    margin-left: 10px;
+    margin-left: 0px;
 }
 #qaAnswerBottom {
     display: flex;
@@ -96,6 +97,7 @@
     background-color: white;
     margin-top: 15px;
     margin-left: 15px;
+    margin-top: 25px;
 }
 #qaAnswerBottomLeft {
     display: flex;
@@ -113,6 +115,6 @@
     align-items: center;
     width: 55px;
     height: 25px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     margin-left: 1180px;
 }

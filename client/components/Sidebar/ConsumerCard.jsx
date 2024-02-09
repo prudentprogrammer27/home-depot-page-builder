@@ -1,9 +1,19 @@
-const ConsumerCard = ({priceDollars, priceCents, setCardModal}) => {
-    let cardDiscountPrice = (priceDollars - 25) + "." + priceCents;
+import { useEffect, useState } from "react";
 
+const ConsumerCard = ({promoInfo, setCardModal}) => {
+    const [cardDiscountPrice, setCardDiscount] = useState('0');
+    
     const handleCardModal =()=> {
         setCardModal(true);
     }
+
+    useEffect(()=> {
+        if(!promoInfo.price_reduced) return;
+
+        let price = promoInfo.price_reduced;
+        setCardDiscount((price.split('.')[0] - 25) + "." + price.split('.')[1]);
+
+    }, [promoInfo])
 
     return (
         <div className="consumer-card-wrapper sb-parent">

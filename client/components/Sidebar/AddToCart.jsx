@@ -1,10 +1,9 @@
 import { useState } from "react";
 
-const AddToCart = () => {
+const AddToCart = ({setItemsInCart}) => {
     const [bgColor, setBgColor] = useState('#f96302')
     const [value, setValue] = useState(1);
-
-    const handleHover = () => {
+    const handleHover =()=> {
         (bgColor === '#f96302') ? setBgColor('rgb(33 33 32)') : setBgColor('#f96302');
     }
 
@@ -20,6 +19,10 @@ const AddToCart = () => {
         }
     }
 
+    const handleAddToCard = () => {
+        setItemsInCart(value);
+    }
+
     return (
         <div className="add-to-cart-wrapper sb-parent">
             <div className="add-to-cart-options">
@@ -28,7 +31,7 @@ const AddToCart = () => {
                     <input onChange={handleUserInput} className="a2c-quantity-btn" inputMode="numeric" min={0} max={3} maxLength={4} pattern="[0-9]*" value={value}></input>
                     <button id='a2c-increment' onClick={handleCartNumber} readOnly={true} className="a2c-quantity-btn">+</button>
                 </div>
-                <div onMouseEnter={handleHover} onMouseLeave={handleHover} className="a2c-button-wrapper" style={{backgroundColor: bgColor}}>
+                <div onClick={handleAddToCard} onMouseEnter={handleHover} onMouseLeave={handleHover} className="a2c-button-wrapper" style={{backgroundColor: bgColor}}>
                     <button className="a2c-btn">
                         <span className="a2c-cart-img">
                             <svg viewBox='0 0 24 24' focusable='false'>

@@ -1,6 +1,6 @@
 import ProtectionPlanBtns from "./ProtectionPlanBtns.jsx";
 
-const ProtectionPlan = () => {
+const ProtectionPlan =()=> {
     return (
         <div className="protection-plan sb-parent">
             <div className="protection-plan-shield-wrapper">
