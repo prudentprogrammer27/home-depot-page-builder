@@ -299,7 +299,10 @@ button {
   padding: 15px 0 10px;
 }
 
-.fulfillment-card-subtitle {}
+.fulfillment-card-subtitle {
+  font-size: 14px;
+  font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
 
 .card-subtitle-qty {
   min-height: 21px;
