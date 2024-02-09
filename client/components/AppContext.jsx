@@ -16,7 +16,6 @@ export const AppProvider = ({ children, currentProduct }) => {
       }
 
       const response = await axios.get(`/api/reviews/${currentProduct.id}`);
-      console.log("Reviews API Response:", response.data);
 
       setReviews(response.data);
 
