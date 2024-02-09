@@ -1,6 +1,7 @@
 INSERT INTO products (id, product_name, manufacturer, price, has_warranty) VALUES
     (2,
     'ATOMIC 20V MAX Lithium-Ion Cordless 1/4 in. Brushless Impact Driver Kit, 5 Ah Battery, Charger, and Bag',
+    'DEWALT',
      169.00,
       false);
 
@@ -86,7 +87,7 @@ INSERT INTO reviews (product_id, content, reviewer_name, rating, title, review_d
   '[This review was collected as part of a promotion.] I absolutely loved using my new DeWalt Impact Drill. It''s light, well balanced and plenty of power. I used this drill on all my new garage shelving and it still had plenty of battery after I was done.', 
   'Bill G', 
   5,
-  "Atomic 20V max impact drill",
+  'Atomic 20V max impact drill',
   '2023-12-23', 
   true);
 
@@ -137,6 +138,7 @@ INSERT INTO reviews (product_id, content, reviewer_name, rating, title, review_d
 INSERT INTO reviews (product_id, content, reviewer_name, rating, title, review_date, isRecommended) VALUES 
   (2, 
   '[This review was collected as part of a promotion.] I received the Atomic 20V MAX* 1/4 in. Brushless Cordless 3-Speed Impact Driver Kit and have been using it almost daily. I use the impact driver for both drilling and screwing all types of screws and snap in a socket driver to insert and remove hex bolts and nuts quite often. My favorite enhancement to the now past model is the new 3 speed options. I now feel I have more control over the use of screws in that the speed is tempered. The brushless motor is so very smooth I can hardly imagine a better tool anywhere on the market. It also seems like the 3 LED lights are very bright as compared to the regular impact driver.', 
+  'Slayyypy',
   5, 
   'Awesome defines DeWalt''s 3 speed impact driver', 
   '2022-12-14', 
@@ -326,6 +328,7 @@ INSERT INTO customer_questions (product_id, question_content, user_name, questio
     'Can''t find a model number on this. Is the 20v 5aH MAX XR Premium the same as the 20v 5aH MAX XR?',
     'Trimbaton774',
     '2022-12-30',
+    'Slappy',
     'There''s three sets of numbers on the top of the battery they are as follows but I don''t know which ones are the actual model numbers but here they are: 2019 45-49 7-2 ;  N552470 L074ZIQ Also , I can send you a picture ',
     '2022-12-30'
 );
@@ -340,47 +343,47 @@ INSERT INTO customer_questions (product_id, question_content, user_name, questio
 );
 
 
--- ================
 INSERT INTO productDetails_images 
   (imageSrc, altText, title, detail, product_id) 
   VALUES
   ('https://cdn.jet-cdn.com/s3/csp/1638280215337/DCF850P1_NA_EN_THD_Pod_1.jpg',
-   'RYOBI Tools',
-   'RYOBI Tools',
-   'RYOBI gives you the ultimate in cordless versatility, selection, and innovation to get the job done. No matter your interests or skill level, RYOBI can power it',
-   1) 
+   'DEWALT Guaranteed Tough',
+   'DEWALT Guaranteed Tough',
+   'DEWALT continues to design and optimize professional jobsite solutions for the toughest jobsite conditions.',
+   2) 
+;
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1638280213925/DCF850B_NA_EN_THD_Pod_2.jpg',
+   'Brushless Motor',
+   'Brushless Motor',
+   'DEWALT brushless motor delivers up to 57% more run time over brushed.',
+   2) 
+;
+
+INSERT INTO productDetails_images 
+  (imageSrc, altText, title, detail, product_id) 
+  VALUES
+  ('https://cdn.jet-cdn.com/s3/csp/1638280202470/Atomic_POD_3.jpg',
+   'Where Size Meets Power',
+   'Where Size Meets Power',
+   'Exceptional 20 VOLT power now comes in a lighter, smaller package with the DEWALT Atomic compact series.',
+   2) 
 ;
 
 -- ================
 INSERT INTO productDetails_images 
   (imageSrc, altText, title, detail, product_id) 
   VALUES
-  ('https://cdn.jet-cdn.com/s3/csp/1665754975484/314109290-POD2.jpg',
-   'ONE+ HP',
-   'ONE+ HP',
-   'The 18V ONE+ HP Brushless series utilizes Advanced Technologies and Superior Ergonomics to deliver High Performance tools and a premium user experience',
-   1) 
+  ('https://cdn.jet-cdn.com/s3/csp/1638280214173/DCF850B_NA_EN_THD_Pod_4.jpg',
+   '29% Shorter',
+   '29% Shorter',
+   'Only 3.97 in. length which is a 29% shorter tool head from front to back vs. DCF885 Impact Driver.',
+   2) 
 ;
-
-INSERT INTO productDetails_images 
-  (imageSrc, altText, title, detail, product_id) 
-  VALUES
-  ('https://cdn.jet-cdn.com/s3/csp/1665754975494/314109290-POD3.jpg',
-   'Premium Performance',
-   'Premium Performance',
-   'All tools in the ONE+ HP series feature a brushless motor, advanced electronics, and lithium-ion batteries to deliver more power, longer runtime, and longer motor life',
-   1) 
-;
-
-INSERT INTO productDetails_images 
-  (imageSrc, altText, title, detail, product_id) 
-  VALUES
-  ('https://cdn.jet-cdn.com/s3/csp/1665754975591/314109290-POD4.jpg',
-   'Brushless Motor',
-   'Brushless Motor',
-   'Provides maximum power, extended runtime, and longer motor life',
-   1) 
-;
+-- ================
 
 
 -- INSERT INTO options (product_id, option_content, option_pic_url) VALUES ()
