@@ -1,7 +1,14 @@
 import React, { useEffect } from 'react';
+import { useAppContext } from '../../AppContext';
 
-const CustomerReviewsChart = ({ ratings }) => {
+const CustomerReviewsChart = () => {
+    const { reviews } = useAppContext();
     useEffect(() => {
+        const dynamicRatings = [0, 0, 0, 0, 0];
+        reviews.forEach((review) => {
+            dynamicRatings[5 - review.rating]++;
+        });
+
         const ctx = document.getElementById('homeDepotChart').getContext('2d');
 
         new window.Chart(ctx, {
@@ -10,7 +17,7 @@ const CustomerReviewsChart = ({ ratings }) => {
                 labels: ['5 Stars', '4 Stars', '3 Stars', '2 Stars', '1 Star'],
                 datasets: [
                     {
-                        data: ratings,
+                        data: dynamicRatings,
                         backgroundColor: 'rgb(247, 100, 3)',
                         borderColor: 'rgb(247, 100, 3)',
                         borderWidth: 1,
@@ -22,7 +29,7 @@ const CustomerReviewsChart = ({ ratings }) => {
                 scales: {
                     x: {
                         beginAtZero: true,
-                        max: Math.max(...ratings) + 10, 
+                        max: Math.max(...dynamicRatings) + 5, 
                         display: false,
                     },
                    
@@ -35,10 +42,10 @@ const CustomerReviewsChart = ({ ratings }) => {
                 indexAxis: 'y',
             },
         });
-    }, [ratings]);
+    }, [reviews]);
 
     return (
-        <div>
+        <div className="chartContainer">
             <canvas id="homeDepotChart" width="400" height="200"></canvas>
         </div>
     );

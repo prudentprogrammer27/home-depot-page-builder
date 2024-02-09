@@ -4,14 +4,16 @@ import "./CustomerReviewsContent.css";
 
 function CustomerReviewsContent() {
 
-  const ratings = [10, 15, 8, 5, 3];
     return (
       <div className="accordion-wrapper">
         <section>
           <div className="ratings-and-reviews">
             <div className="customer-review-header">
               <CReviewHeaderColumn1 />
-              <CustomerReviewsChart ratings = {ratings} />
+              <CustomerReviewsChart />
+              <div className="CReviewHeaderColumn3">
+                <button className="write-review-button">Write a Review</button>
+              </div>
 
             </div>
 

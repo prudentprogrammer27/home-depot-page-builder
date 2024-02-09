@@ -1,22 +1,11 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import './QAQuestion.css';
 
-const QandAQuestions = ({ currentProduct }) => {
-  const [ questionInfo, setQuestionInfo ] = useState([]);
-
-  useEffect(() => {
-    const fetchQA = async () => {
-      try {
-        const response = await axios.get(`/api/customer_questions/${currentProduct.id}`);
-        setQuestionInfo(response.data);
-      } catch (error) {
-        console.error('Error fetching data', error);
-      }
-    };
-
-    fetchQA();
-  }, [currentProduct]);
+const QandAQuestions = ({ questionDB }) => {
+  // const [questionDB, setQuestionDB] = useState()
+  // const [currentProduct, setCurrentProduct] = useState()
+  console.log('childDB', questionDB)
+  // console.log('childCP', currentProduct)
     return (
         <div id="qaQuestionCont">
           <div id="qaQuestionLeft">
