@@ -32,6 +32,8 @@ const App = () => {
   const ryobiDrill =
     "ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag";
 
+  const dewaltDrill = "ATOMIC%20V%MAX%Lithium%Ion%Cordless%1%4%in%Brushless%Impact%Driver%Kit%5%Ah%Battery%Charger%and%Bag%DCF850P1/316629766";
+
   useEffect(() => {
     const fetchData = async () => {
       try {
