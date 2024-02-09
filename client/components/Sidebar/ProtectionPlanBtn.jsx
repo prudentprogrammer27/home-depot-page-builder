@@ -13,7 +13,7 @@ const ProtectionPlanBtn = ({title, currOpt, setCurrOpt}) => {
         bgColor = ''
     }
         
-    const handleOptSelect = () => {
+    const handleOptSelect =()=> {
         setCurrOpt(title);
     }
 

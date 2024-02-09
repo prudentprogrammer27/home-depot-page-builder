@@ -5,7 +5,7 @@ const ItemFacts = ({descriptions}) => {
                 {descriptions.map((description)=> {
                     return <li key={description.id}>{description.fact}</li>
                 })}
-                <li><a href="daa">View More Details</a></li>
+                <li><a href="">View More Details</a></li>
             </ul>
         </div>
     )

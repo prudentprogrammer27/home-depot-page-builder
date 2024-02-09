@@ -19,10 +19,12 @@ const MediaGalleryDesktop = ({
   //     averageRating, totalReviews,
 
   useEffect(() => {
+    if(!currentProduct.id) return;
+    
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
-        console.log("Image-url table", response.data);
+
         if (response.data.length > 0) {
           const imagesData = response.data.map((image) => ({
             original: `https://images.thdstatic.com/productImages/${image.img_url}600.jpg`,

@@ -1,6 +1,16 @@
+import { useEffect, useState } from "react";
+
 const LocationInfo = ({localStoreInfo}) => {
+    const [displayVal, setDisplayVal] = useState('flex');  
+
+    useEffect(()=> {
+
+      (localStoreInfo.inventory == 0) ? setDisplayVal('none') : setDisplayVal('flex');
+
+    }, [localStoreInfo]);
+
     return (
-      <div className="location-info sb-parent">
+      <div className="location-info sb-parent" style={{display: displayVal}}>
         <fieldset className="location-info-fieldset">
             <legend><b>{localStoreInfo.city_name} Store</b></legend>
                 <section className="location-info-stock-info">

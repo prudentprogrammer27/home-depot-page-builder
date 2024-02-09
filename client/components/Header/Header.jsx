@@ -1,6 +1,6 @@
 import "./header.css"
 
-const Header = () => {
+const Header = ({itemsInCart}) => {
   return (
     <>
       <header>
@@ -48,7 +48,7 @@ const Header = () => {
             </div>
             <div className="side-by-side" id="cartIcon">
               <img src="./components/Header/header-images/cart.png" alt="Cart Logo" />
-              <div>3</div>
+              <div style={{display: (itemsInCart == 0) ? 'none' : 'flex'}}><span>{itemsInCart}</span></div>
             </div>
           </div>
         </div>
