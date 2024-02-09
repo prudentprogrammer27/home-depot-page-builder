@@ -29,18 +29,17 @@ const App = () => {
     SetPanelToShow(index);
   };
 
-  const ryobiDrill =
-    "ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag";
+  const ryobiDrill = 1;
 
-  const dewaltDrill =
-    "ATOMIC%20V%MAX%Lithium%Ion%Cordless%1%4%in%Brushless%Impact%Driver%Kit%5%Ah%Battery%Charger%and%Bag%DCF850P1/316629766";
+  const dewaltDrill = 2;
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/p/${ryobiDrill}`);
+        const response = await axios.get(`/api/p/${dewaltDrill}`);
         // console.log(response.data);
         setCurrentProduct(response.data[0]);
+        console.log(response.data[0]);
       } catch (error) {
         console.error("Error fetching product page", error);
       }
