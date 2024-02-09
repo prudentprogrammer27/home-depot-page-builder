@@ -1,2 +1,103 @@
-@import "react-image-gallery/styles/css/image-gallery.css";
+.gallery-container {
+  /* border: solid;
+  display: flex;
+  flex-direction: column;
+  align-items: left; */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-content: left;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  border: -1px solid black;
+  background-color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
+.gallery-header {
+  display: flex;
+  flex-direction: column;
+  padding-left: 3%;
+}
+
+.gallery-best-seller {
+  /* border: solid; */
+  display: flex;
+}
+.gallery-best-seller-content {
+  border: solid;
+  background-color: #3e7697;
+  color: white;
+  font-size: small;
+  padding: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
+}
+
+.gallery-manufacturer {
+  display: flex;
+}
+
+.gallery-item-title {
+  display: flex;
+  align-self: left;
+  justify-content: left;
+}
+
+.gallery-review-questions-contaner {
+  display: flex;
+  flex-direction: row;
+}
+
+.gallery-review-summary {
+  display: flex;
+}
+
+.gallery-questions-summary {
+  display: flex;
+}
+
+.gallery-photos-container {
+  display: flex;
+  flex-wrap: row;
+  padding-left: 3%;
+}
+
+.gallery-thumbnail-column-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-main-image {
+  cursor: crosshair;
+  object-fit: cover;
+  font-size: 0px;
+  position: relative;
+  user-select: none;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin: 5%;
+}
+
+.btn-thumbnail {
+  position: relative;
+}
+
+.thumbnail-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.gallery-overlay-text {
+  color: white;
+  font-size: 16px;
+}

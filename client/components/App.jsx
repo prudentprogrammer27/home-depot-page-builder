@@ -9,9 +9,21 @@ import MediaModal from "./MediaModal/MediaModal.jsx";
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [modal, setModal] = useState(false);
+  // const [isReviewsActive, setIsReviewsActive] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [panelToShow, SetPanelToShow] = useState(null);
 
   const toggleModal = () => {
     setModal(!modal);
+  };
+
+  // const toggleReviewsActive = () => {
+  //   setIsReviewsActive(!isReviewsActive);
+  // };
+
+  const scrollToPanel = (index) => {
+    setIsScrolling((prevIsScrolling) => !prevIsScrolling);
+    SetPanelToShow(index);
   };
 
   const ryobiDrill =
@@ -40,18 +52,28 @@ const App = () => {
           modal={modal}
         />
       )}
-        <div className="item-wrapper bounding-box">
-          <div className="picture-and-sidebar">
-            <div className="img-gallery">
-              <MediaGalleryDesktop
-                currentProduct={currentProduct}
-                toggleModal={toggleModal}
-              />
-            </div>
-            <Sidebar currentProduct={currentProduct} />
+      <div className="item-wrapper bounding-box">
+        <div className="picture-and-sidebar">
+          <div className="img-gallery">
+            <MediaGalleryDesktop
+              currentProduct={currentProduct}
+              toggleModal={toggleModal}
+              // toggleReviewsActive={toggleReviewsActive}
+              // isReviewsActive={isReviewsActive}
+              scrollToPanel={scrollToPanel}
+            />
           </div>
-        <Accordion currentProduct={currentProduct}/>
+          <Sidebar currentProduct={currentProduct} />
         </div>
+        <Accordion
+          currentProduct={currentProduct}
+          // toggleReviewsActive={toggleReviewsActive}
+          // isReviewsActive={isReviewsActive}
+          scrollToPanel={scrollToPanel}
+          panelToShow={panelToShow}
+          isScrolling={isScrolling}
+        />
+      </div>
     </main>
   );
 };
