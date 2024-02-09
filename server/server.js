@@ -32,20 +32,19 @@ app.get("/api/products", (req, res, next) => {
 
 // ========== Get Paramatize Product ===========
 // p is short for products (mirrors Home Depot search url)
-// localhost:9000/api/p/ONE%2B%20HP%2018V%20Brushless%20Cordless%201%2F2%20in.%20Drill%2FDriver%20and%20Impact%20Driver%20Kit%20w%2F(2)%202.0%20Ah%20Batteries%2C%20Charger%2C%20and%20Bag
-app.get("/api/p/:product_name", (req, res, next) => {
-  const { product_name } = req.params;
+app.get("/api/p/:id", (req, res, next) => {
+  const { id } = req.params;
 
   const query = {
-    text: "SELECT * FROM products WHERE product_name ILIKE $1",
-    values: [`%${product_name}%`], // case-insensitive & wildcard search
+    text: "SELECT * FROM products WHERE id = $1",
+    values: [id], 
   };
 
   client
     .query(query)
     .then((data) => {
       console.log(
-        `Success getting product with name: ${product_name}`
+        `Success getting product with name: ${id}`
       );
       res.status(200).send(data.rows);
     })
