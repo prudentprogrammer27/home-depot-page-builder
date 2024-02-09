@@ -2,21 +2,8 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './QAAnswer.css';
 
-const QAAnswer = ({ currentProduct }) => {
-  const [ questionInfo, setQuestionInfo ] = useState([]);
+const QAAnswer = ({}) => {
 
-  useEffect(() => {
-    const fetchQA = async () => {
-      try {
-        const response = await axios.get(`/api/customer_questions/${currentProduct.id}`);
-        setQuestionInfo(response.data);
-      } catch (error) {
-        console.error('Error fetching data', error);
-      }
-    };
-
-    fetchQA();
-  }, [currentProduct]);
 
     return (
         <div id="qaAnswerCont">
