@@ -12,9 +12,21 @@ const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
   const [modal, setModal] = useState(false);
   const [isCardModal, setCardModal] = useState(false);
+  // const [isReviewsActive, setIsReviewsActive] = useState(false);
+  const [isScrolling, setIsScrolling] = useState(false);
+  const [panelToShow, SetPanelToShow] = useState(null);
 
   const toggleModal = () => {
     setModal(!modal);
+  };
+
+  // const toggleReviewsActive = () => {
+  //   setIsReviewsActive(!isReviewsActive);
+  // };
+
+  const scrollToPanel = (index) => {
+    setIsScrolling((prevIsScrolling) => !prevIsScrolling);
+    SetPanelToShow(index);
   };
 
   const ryobiDrill =
@@ -43,20 +55,30 @@ const App = () => {
           modal={modal}
         />
       )}
-        <div className="item-wrapper bounding-box">
-          <NavigationBar/>
-          <div className="picture-and-sidebar">
-            <div className="img-gallery">
-              <MediaGalleryDesktop
-                currentProduct={currentProduct}
-                toggleModal={toggleModal}
-              />
-            </div>
-            <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
+      <div className="item-wrapper bounding-box">
+      <NavigationBar/>
+        <div className="picture-and-sidebar">
+          <div className="img-gallery">
+            <MediaGalleryDesktop
+              currentProduct={currentProduct}
+              toggleModal={toggleModal}
+              // toggleReviewsActive={toggleReviewsActive}
+              // isReviewsActive={isReviewsActive}
+              scrollToPanel={scrollToPanel}
+            />
           </div>
-          <Accordion currentProduct={currentProduct}/>
+          <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
         </div>
-        <ConsumerCardModal isCardModal={isCardModal} setCardModal={setCardModal}/>
+        <Accordion
+          currentProduct={currentProduct}
+          // toggleReviewsActive={toggleReviewsActive}
+          // isReviewsActive={isReviewsActive}
+          scrollToPanel={scrollToPanel}
+          panelToShow={panelToShow}
+          isScrolling={isScrolling}
+        />
+      </div>
+      <ConsumerCardModal isCardModal={isCardModal} setCardModal={setCardModal}/>
     </main>
   );
 };
