@@ -19,6 +19,8 @@ const MediaGalleryDesktop = ({
   //     averageRating, totalReviews,
 
   useEffect(() => {
+    if(!currentProduct.id) return;
+    
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
