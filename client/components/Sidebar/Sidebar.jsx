@@ -25,20 +25,24 @@ const Sidebar = ({currentProduct, setCardModal}) => {
             setPriceCents(splitPrice[1]);
         }
 
-        async function fetchData() {
+        const fetchData = async () => {
             let productId = (currentProduct.id == undefined) ? '1' : currentProduct.id;
 
-            let rawDescriptionData = await axios.get(`/api/descriptions/${productId}`);
-            let descriptions = rawDescriptionData.data;
-            setDescriptions(descriptions);
-            
-            let rawLocalData = await axios.get(`/api/store_local/${productId}`);
-            let localStore = rawLocalData.data[0];
-            setLocalStore(localStore)
-
-            let rawOnlineData = await axios.get(`/api/store_online/${productId}`);
-            let onlineStore = rawOnlineData.data[0];
-            setOnlineStore(onlineStore);
+            try {
+                let rawDescriptionData = await axios.get(`/api/descriptions/${productId}`);
+                let descriptions = rawDescriptionData.data;
+                setDescriptions(descriptions);
+                
+                let rawLocalData = await axios.get(`/api/store_local/${productId}`);
+                let localStore = rawLocalData.data[0];
+                setLocalStore(localStore)
+    
+                let rawOnlineData = await axios.get(`/api/store_online/${productId}`);
+                let onlineStore = rawOnlineData.data[0];
+                setOnlineStore(onlineStore);
+            } catch(e) {
+                console.log(e);
+            }
         }
 
         fetchData()
