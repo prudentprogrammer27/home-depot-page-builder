@@ -8,12 +8,13 @@ import Price from "./Price.jsx";
 import axios from "axios";
 import './sidebar.css'
 
-const Sidebar = ({currentProduct, setCardModal}) => {
+const Sidebar = ({currentProduct, setCardModal, setItemsInCart}) => {
     const [descriptions, setDescriptions] = useState([]);
     const [localStoreInfo, setLocalStore] = useState({});
     const [onlineStoreInfo, setOnlineStore] = useState({});
     const [priceDollars, setPriceDollars] = useState('0');
     const [priceCents, setPriceCents] = useState('00');
+    const [promoInfo, setPromoInfo] = useState({});
     
     useEffect(()=> {
         if(!currentProduct.id) return;
@@ -22,11 +23,15 @@ const Sidebar = ({currentProduct, setCardModal}) => {
         setPriceDollars(splitPrice[0]);
         setPriceCents(splitPrice[1]);
 
-        const fetchData = async () => {
+        const fetchData = async() => {
             try {
                 let rawDescriptionData = await axios.get(`/api/descriptions/${currentProduct.id}`);
                 let descriptions = rawDescriptionData.data;
                 setDescriptions(descriptions);
+
+                let rawPromotionData = await axios.get(`/api/promotions/${currentProduct.id}`);
+                let promotions = rawPromotionData.data[0];-
+                setPromoInfo(promotions);
                 
                 let rawLocalData = await axios.get(`/api/store_local/${currentProduct.id}`);
                 let localStore = rawLocalData.data[0];
@@ -46,14 +51,14 @@ const Sidebar = ({currentProduct, setCardModal}) => {
     }, [currentProduct]);
 
     return (
-            <div className="sidebar">
-                <Price priceDollars={priceDollars} priceCents={priceCents}/>
-                <ConsumerCard priceDollars={priceDollars} priceCents={priceCents} setCardModal={setCardModal}/>
-                <ItemFacts descriptions={descriptions}/>
-                <LocationInfo localStoreInfo={localStoreInfo}/>
-                <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo}/>
-                <ReturnInfo/>
-            </div>
+        <div className="sidebar">
+            <Price promoInfo={promoInfo}/>
+            <ConsumerCard promoInfo={promoInfo} priceDollars={priceDollars} priceCents={priceCents} setCardModal={setCardModal}/>
+            <ItemFacts descriptions={descriptions}/>
+            <LocationInfo localStoreInfo={localStoreInfo}/>
+            <CartInfo localStoreInfo={localStoreInfo} onlineStoreInfo={onlineStoreInfo} setItemsInCart={setItemsInCart}/>
+            <ReturnInfo/>
+        </div>
     )
 }
 

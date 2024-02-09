@@ -16,6 +16,7 @@ const App = () => {
   // const [isReviewsActive, setIsReviewsActive] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [panelToShow, SetPanelToShow] = useState(null);
+  const [itemsInCart, setItemsInCart] = useState(0);
 
   const toggleModal = () => {
     setModal(!modal);
@@ -37,7 +38,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/p/${dewaltDrill}`);
+        const response = await axios.get(`/api/p/${ryobiDrill}`);
         setCurrentProduct(response.data[0]);
 
       } catch (error) {
@@ -50,7 +51,7 @@ const App = () => {
   return (
     <AppProvider currentProduct={currentProduct}>
       <main>
-        <Header />
+        <Header itemsInCart={itemsInCart}/>
         {modal && (
           <MediaModal
             currentProduct={currentProduct}
@@ -70,7 +71,7 @@ const App = () => {
                 scrollToPanel={scrollToPanel}
               />
             </div>
-            <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} />
+            <Sidebar currentProduct={currentProduct} setCardModal={setCardModal} setItemsInCart={setItemsInCart}/>
           </div>
           <Accordion
             currentProduct={currentProduct}
