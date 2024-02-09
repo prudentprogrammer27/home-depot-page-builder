@@ -37,7 +37,7 @@ const App = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`/api/p/${dewaltDrill}`);
+        const response = await axios.get(`/api/p/${ryobiDrill}`);
         // console.log(response.data);
         setCurrentProduct(response.data[0]);
         console.log(response.data[0]);

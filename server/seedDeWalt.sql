@@ -1,9 +1,11 @@
-INSERT INTO products (id, product_name, manufacturer, price, has_warranty) VALUES
-    (2,
-    'ATOMIC 20V MAX Lithium-Ion Cordless 1/4 in. Brushless Impact Driver Kit, 5 Ah Battery, Charger, and Bag',
-    'DEWALT',
-     169.00,
-      false);
+-- INSERT INTO products (id, product_name, manufacturer, price, has_warranty) VALUES
+--     (2,
+--     'ATOMIC 20V MAX Lithium-Ion Cordless 1/4 in. Brushless Impact Driver Kit, 5 Ah Battery, Charger, and Bag',
+--     'DEWALT',
+--      169.00,
+--       false);
+
+DELETE FROM specifications_details WHERE product_id =2;
 
 INSERT INTO specifications_details 
   (battery_amp_hours,
@@ -50,11 +52,14 @@ INSERT INTO specifications_details
     '20 V',
     2);
 
+DELETE FROM descriptions WHERE product_id =2;
 
 INSERT INTO descriptions (fact, product_id) VALUES ('1825 in lbs. Torque and 3250 RPM for professional performance', 2); 
 INSERT INTO descriptions (fact, product_id) VALUES ('Compact design at 3.97” tool length', 2);
-INSERT INTO descriptions (fact, product_id) VALUES ('Includes (1) 20-Volt MAX XR Battery 5.0Ah', 1);  
+INSERT INTO descriptions (fact, product_id) VALUES ('Includes (1) 20-Volt MAX XR Battery 5.0Ah', 2);  
      
+
+DELETE FROM reviews WHERE product_id =2;
 
 INSERT INTO reviews (product_id, content, reviewer_name, rating, title, review_date, isRecommended) VALUES 
   (2, 
@@ -143,6 +148,8 @@ INSERT INTO reviews (product_id, content, reviewer_name, rating, title, review_d
   'Awesome defines DeWalt''s 3 speed impact driver', 
   '2022-12-14', 
   true);
+
+DELETE FROM review_images WHERE product_id =2;
 
 INSERT INTO review_images (review_id, img_url) VALUES 
   (1,
@@ -238,6 +245,7 @@ INSERT INTO review_images (review_id, img_url) VALUES
   (10, 'https://photos-us.bazaarvoice.com/photo/2/cGhvdG86ZGV3YWx0/202fe5b2-285a-5fe4-b21e-b0c088ef2f3b');
 
   
+DELETE FROM img_urls WHERE product_id =2;
 
 INSERT INTO img_urls (product_id, img_url) VALUES (2, '0ddcc6a2-169e-4de4-9e6b-4138f1ed4e3f/svn/dewalt-impact-drivers-dcf850p1-64_');  
 INSERT INTO img_urls (product_id, img_url) VALUES (2, 'e6c4433c-2642-4708-9bec-772e87fcbabd/svn/dewalt-impact-drivers-dcf850p1-e1_');
@@ -252,7 +260,10 @@ INSERT INTO img_urls (product_id, img_url) VALUES (2, '450a5dc5-d96b-4a05-b09a-3
 INSERT INTO img_urls (product_id, img_url) VALUES (2, 'a37d35e8-83b4-4e3f-8c3d-a709043f7fd7/svn/dewalt-impact-drivers-dcf850p1-fa_');
 INSERT INTO img_urls (product_id, img_url) VALUES (2, 'aea8f6fe-3274-4e16-8c92-845c95dde886/svn/dewalt-impact-drivers-dcf850p1-76_');
 INSERT INTO img_urls (product_id, img_url) VALUES (2, 'd1178ac5-072a-4db7-982f-3fdeb84af12a/svn/dewalt-impact-drivers-dcf850p1-d4_');
- 
+
+
+DELETE FROM specifications_dimensions WHERE product_id =2;
+
 INSERT INTO specifications_dimensions (product_id, depth, depth_unit_of_measure, width, width_unit_of_measure, height, height_unit_of_measure) VALUES 
   (2, 12.5, 'in', 9.813, 'in', 3.75, 'in');
 
@@ -260,14 +271,17 @@ INSERT INTO warranty_certifications (product_id, certifications_listings, manufa
     2, 'CSA Listed', '3 Year Limited Warranty, 1 Year Warranty, 90 Day Money Back Guarantee'
 );
 
+DELETE FROM promotions WHERE product_id =2;
 
 INSERT INTO promotions (product_id, price_original, price_reduced) VALUES (2, 219.00, 169.00);
 
+DELETE FROM store_online WHERE product_id =2;
 
 INSERT INTO store_online (product_id, inventory, days_to_ship) VALUES (2, 421, 3);
 
 INSERT INTO store_local (zipcode, city_name, product_id, inventory) VALUES (91945, 'Lemon Grove', 2, 0);
 
+DELETE FROM customer_questions WHERE product_id =2;
 
 INSERT INTO customer_questions (product_id, question_content, user_name, question_date, response_user_name, response_content, response_date) VALUES (
     2, 
@@ -342,6 +356,7 @@ INSERT INTO customer_questions (product_id, question_content, user_name, questio
     '2023-10-30'
 );
 
+DELETE FROM productDetails_images WHERE product_id =2;
 
 INSERT INTO productDetails_images 
   (imageSrc, altText, title, detail, product_id) 
@@ -373,7 +388,6 @@ INSERT INTO productDetails_images
    2) 
 ;
 
--- ================
 INSERT INTO productDetails_images 
   (imageSrc, altText, title, detail, product_id) 
   VALUES
@@ -383,7 +397,3 @@ INSERT INTO productDetails_images
    'Only 3.97 in. length which is a 29% shorter tool head from front to back vs. DCF885 Impact Driver.',
    2) 
 ;
--- ================
-
-
--- INSERT INTO options (product_id, option_content, option_pic_url) VALUES ()
