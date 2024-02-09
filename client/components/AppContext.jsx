@@ -37,9 +37,9 @@ export const AppProvider = ({ children, currentProduct }) => {
     fetchReviews();
   }, [currentProduct]);
 
-  useEffect(() => {
-    fetchReviews();
-  }, [currentProduct]);
+  // useEffect(() => {
+  //   fetchReviews();
+  // }, [currentProduct]);
 
   // Expose the values and functions through the context
   const contextValues = {
