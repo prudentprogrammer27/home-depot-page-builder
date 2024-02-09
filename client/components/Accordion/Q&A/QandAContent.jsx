@@ -8,13 +8,13 @@ import QAAnswer from './Q&AComponents/QAAnswer/Q&A-Answers.jsx';
 import QAFooter from './Q&AComponents/QAFooter/Q&A-Footer.jsx';
 
 const QandAContent = ({ currentProduct }) => {
-  const [ questionInfo, setQuestionInfo ] = useState([]);
+  const [ questionDB, setQuestionDB ] = useState([]);
 
   useEffect(() => {
     const fetchQA = async () => {
       try {
         const response = await axios.get(`/api/customer_questions/${currentProduct.id}`);
-        setQuestionInfo(response.data);
+        setQuestionDB(response.data);
       } catch (error) {
         console.error('Error fetching data', error);
       }
@@ -22,68 +22,70 @@ const QandAContent = ({ currentProduct }) => {
 
     fetchQA();
   }, [currentProduct]);
-
+  console.log('parentDb', questionDB)
+  console.log('parentCP', currentProduct)
  return (
     <div>
       <div id="accordion-qa">
         <QAHeader />
         <Navigation />
-        <QandAQuestions />
-        <QandAQuestions />
-        <QandAQuestions />
-        <QandAQuestions />
+        <QandAQuestions questionDB={questionDB} />
+        {/* <QandAQuestions currentProduct={currentProduct}/>
+        <QandAQuestions currentProduct={currentProduct}/>
+        <QandAQuestions currentProduct={currentProduct}/> */}
         <QAAnswer />
         <QAFooter />
-        <ul>
-          {questionInfo.map((questions) => (
-            <li className="QandA" key={questionInfo[0].question_content}>
-              {questionInfo[0].question_content}
+        {/* <ul>
+          {questionDB.map((questions) => (
+            <li className="QandA" key={questionDB[0].question_content}>
+              {questionDB[0].question_content}
             </li>
           ))}
+        </ul> */}
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].question_content}>
-              {questionInfo[1].question_content}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].question_content}>
+              {questionDB[1].question_content}
               </li>
           )}
 
         </ul>
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].user_name}>
-              {questionInfo[1].user_name}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].user_name}>
+              {questionDB[1].user_name}
               </li>
           )}
         </ul>
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].question_date}>
-              {questionInfo[1].question_date}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].question_date}>
+              {questionDB[1].question_date}
               </li>
           )}
         </ul>
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].response_content}>
-              {questionInfo[1].response_content}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].response_content}>
+              {questionDB[1].response_content}
               </li>
           )}
         </ul>
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].response_user_name}>
-              {questionInfo[1].response_user_name}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].response_user_name}>
+              {questionDB[1].response_user_name}
               </li>
           )}
         </ul>
         <ul>
-          {questionInfo.length > 0 && (
-            <li className="QandA" key={questionInfo[1].response_date}>
-              {questionInfo[1].response_date}
+          {questionDB.length > 0 && (
+            <li className="QandA" key={questionDB[1].response_date}>
+              {questionDB[1].response_date}
               </li>
           )}
         </ul>
-        </ul> 
+        
       </div>
       
     </div>
