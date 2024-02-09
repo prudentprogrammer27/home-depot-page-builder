@@ -17,7 +17,8 @@ button {
     position: relative;
     flex: 1 1 auto;
     flex-grow: 1;
-    width: 42%;
+    width: 40%;
+    /* padding-left: 10px; */
   }
 }
 
@@ -26,6 +27,11 @@ button {
   display: flex;
   margin-bottom: 15px;
   background-color: #fff;
+}
+
+.inside-price-wrapper {
+  display: flex;
+  padding: 5px;
 }
 
 .sale-icon{
@@ -54,6 +60,7 @@ button {
   font-variation-settings: normal;
   font-size: 44px;
   font-weight: bold;
+  color: #333333;
 }
 
 .price-cents {
@@ -69,22 +76,24 @@ button {
 
 .sale-limit {
   font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 
 .sale-price-original {
   font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-size: 14px;
 }
 
 .sale-discount-amount {
   font-family: helvetica-neue-bold,Helvetica Neue,Helvetica,Arial,sans-serif;
   color: #009a4f;
+  font-size: 14px;
 }
 
 /* -------------- Consumer card component -------------------*/
 
 .consumer-card-wrapper {
   display: flex;
-  width: 95%;
   position: relative;
   margin-top: -20px;
   margin-bottom: 15px;
@@ -290,9 +299,7 @@ button {
   padding: 15px 0 10px;
 }
 
-.fulfillment-card-subtitle {
-  font-family: helvetica-neue-75-bold,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
-}
+.fulfillment-card-subtitle {}
 
 .card-subtitle-qty {
   min-height: 21px;

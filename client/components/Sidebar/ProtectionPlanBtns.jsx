@@ -2,7 +2,7 @@ import { useState } from "react";
 import ProtectionPlanBtn from "./ProtectionPlanBtn.jsx";
 
 const ProtectionPlanBtns = () => {
-    const [currOpt, setCurrOpt] = useState('Option 1');
+    const [currOpt, setCurrOpt] = useState('2 year / $30.00');
 
     return (
         <div className="protection-plan-options">
