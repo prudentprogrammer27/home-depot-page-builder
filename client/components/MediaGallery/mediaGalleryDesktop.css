@@ -67,6 +67,7 @@
   font-size: small;
   margin-top: 0.6em;
   padding-right: 0.5em;
+  cursor: pointer;
 }
 
 .gallery-review-icon-container {
@@ -108,11 +109,18 @@
   position: relative;
 }
 
+.btn-thumbnail :hover {
+  border: solid;
+  border-width: 0.22rem;
+  border-color: rgb(247, 100, 3);
+  cursor: pointer;
+}
+
 .thumbnail-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 110%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
@@ -135,18 +143,18 @@
   margin-bottom: 1%;
   right: 2%;
   bottom: 2%;
+  cursor: pointer;
 }
 
 .gallery-share-container {
   display: flex;
   flex-direction: row;
-  padding-right: .5em;
+  padding-right: 0.5em;
 }
 
 .gallery-share-button {
   display: flex;
   align-items: center;
-  cursor: pointer;
 }
 
 .gallery-share-button img,
