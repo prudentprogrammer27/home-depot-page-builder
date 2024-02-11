@@ -2,12 +2,12 @@ import "./mediaGalleryDesktop.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useAppContext } from "client/components/AppContext.jsx";
-import ReviewModal from "client/components/ReviewModal/ReviewModal.jsx";
 
 const MediaGalleryDesktop = ({
   currentProduct,
   toggleModal,
   scrollToPanel,
+  showReviewModal,
 }) => {
   const [mainImage, setMainImage] = useState("");
   const [images, setImages] = useState([]);
@@ -15,8 +15,6 @@ const MediaGalleryDesktop = ({
   const { averageRating, totalReviews, totalQuestions } = useAppContext();
 
   const starNum = Math.round(parseFloat(averageRating));
-
-  //     averageRating, totalReviews,
 
   useEffect(() => {
     if (!currentProduct.id) return;
@@ -104,13 +102,18 @@ const MediaGalleryDesktop = ({
     setMainImage(thumbnail.original);
   };
 
-  const handleReviewHover = () => {
+  const handleReviewHover = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const position = {
+      top: rect.bottom,
+      left: rect.left
+    }
     setReviewModalActive(true);
+    showReviewModal(position);
     console.log("Hovering over Review");
   };
 
   const handleReviewsClick = () => {
-    // toggleReviewsActive();
     setReviewModalActive(false);
     scrollToPanel(3);
   };
@@ -150,7 +153,6 @@ const MediaGalleryDesktop = ({
               Questions & Answers {`(${totalQuestions})`}
             </div>
           </div>
-          <ReviewModal reviewModalActive={reviewModalActive} />
         </div>
         <div className="gallery-photos-container">
           <div className="gallery-thumbnail-column-container">

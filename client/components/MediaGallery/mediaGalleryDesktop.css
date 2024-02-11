@@ -1,8 +1,4 @@
 .gallery-container {
-  /* border: solid;
-  display: flex;
-  flex-direction: column;
-  align-items: left; */
   display: flex;
   flex-wrap: wrap;
   justify-content: left;
@@ -25,7 +21,6 @@
 }
 
 .gallery-best-seller {
-  /* border: solid; */
   display: flex;
 }
 .gallery-best-seller-content {
@@ -134,10 +129,7 @@
 }
 
 .gallery-share-print-container {
-  /* display: flex; */
   position: absolute;
-  /* padding: 2em;
-  width: 100%; */
   display: flex;
   flex-direction: row;
   margin-bottom: 1%;
@@ -159,9 +151,7 @@
 
 .gallery-share-button img,
 .gallery-print-button img {
-  /* display: flex; */
   width: 1em;
   height: 1em;
   margin-right: 0.2em;
-  /* padding: .5em; */
 }
