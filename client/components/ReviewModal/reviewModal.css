@@ -1,0 +1,10 @@
+.review-modal-container {
+  border: solid;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-modal-percentage {
+  display: flex;
+}
