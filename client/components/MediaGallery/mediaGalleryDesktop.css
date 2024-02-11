@@ -130,9 +130,17 @@
   position: absolute;
   /* padding: 2em;
   width: 100%; */
+  display: flex;
+  flex-direction: row;
   margin-bottom: 1%;
   right: 2%;
   bottom: 2%;
+}
+
+.gallery-share-container {
+  display: flex;
+  flex-direction: row;
+  padding-right: .5em;
 }
 
 .gallery-share-button {
@@ -141,8 +149,11 @@
   cursor: pointer;
 }
 
-.gallery-share-button img {
+.gallery-share-button img,
+.gallery-print-button img {
+  /* display: flex; */
   width: 1em;
   height: 1em;
   margin-right: 0.2em;
+  /* padding: .5em; */
 }

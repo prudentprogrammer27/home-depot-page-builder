@@ -19,8 +19,8 @@ const MediaGalleryDesktop = ({
   //     averageRating, totalReviews,
 
   useEffect(() => {
-    if(!currentProduct.id) return;
-    
+    if (!currentProduct.id) return;
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
@@ -153,15 +153,24 @@ const MediaGalleryDesktop = ({
           </div>
         </div>
         <div className="gallery-share-print-container">
-          Share & Print
-          <button className="gallery-share-button">
-            <img
-              src="./components/MediaGallery/icons/shareIcon.png"
-              alt="share arrow button"
-            ></img>
-            Share
-          </button>
-          <button className="gallery-print-button"></button>
+          <div className="gallery-share-container">
+            <button className="gallery-share-button">
+              <img
+                src="./components/MediaGallery/icons/shareIcon.png"
+                alt="share arrow icon"
+              ></img>
+              Share
+            </button>
+          </div>
+          <div className="gallery-print-container">
+            <button className="gallery-print-button">
+              <img
+                src="./components/MediaGallery/icons/printIcon.png"
+                alt="print icon"
+              ></img>
+              Print
+            </button>
+          </div>
         </div>
       </div>
     </>
