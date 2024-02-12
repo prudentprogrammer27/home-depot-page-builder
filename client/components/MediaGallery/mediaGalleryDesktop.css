@@ -65,6 +65,10 @@
   cursor: pointer;
 }
 
+.gallery-questions-summary :hover {
+  text-decoration: underline;
+}
+
 .gallery-review-icon-container {
   padding-right: 0.5em;
 }

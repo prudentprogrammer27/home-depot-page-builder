@@ -106,8 +106,8 @@ const MediaGalleryDesktop = ({
     const rect = e.target.getBoundingClientRect();
     const position = {
       top: rect.bottom,
-      left: rect.left
-    }
+      left: rect.left,
+    };
     setReviewModalActive(true);
     showReviewModal(position);
     console.log("Hovering over Review");
@@ -121,6 +121,10 @@ const MediaGalleryDesktop = ({
   const handleQuestionsClick = () => {
     scrollToPanel(2);
   };
+
+  // const handleQuestionsHover = () => {
+  //   onMouseEnter
+  // }
 
   return (
     <>
@@ -150,7 +154,7 @@ const MediaGalleryDesktop = ({
               className="gallery-questions-summary"
               onClick={handleQuestionsClick}
             >
-              Questions & Answers {`(${totalQuestions})`}
+              <p>Questions & Answers {`(${totalQuestions})`}</p>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@ import MediaModal from "./MediaModal/MediaModal.jsx";
 import ConsumerCardModal from "./Sidebar/ConsumerCardModal/ConsumerCardModal.jsx";
 import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 import { AppProvider } from "./AppContext";
-import ReviewModal from "client/components/ReviewModal/ReviewModal.jsx";
+// import ReviewModal from "client/components/ReviewModal/ReviewModal.jsx";
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
@@ -65,12 +65,12 @@ const App = () => {
             modal={modal}
           />
         )}
-        {isReviewModal && (
+        {/* {isReviewModal && (
           <ReviewModal
             hoverPosition={hoverPosition}
             hideReviewModal={hideReviewModal}
           />
-        )}
+        )} */}
         <div className="item-wrapper bounding-box">
           <NavigationBar />
           <div className="picture-and-sidebar">

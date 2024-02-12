@@ -8,7 +8,6 @@ import "./accordion.css";
 
 export default function Accordion({
   currentProduct,
-  // toggleReviewsActive,
   panelToShow,
 }) {
   const [panels, setPanels] = useState([
@@ -62,7 +61,6 @@ export default function Accordion({
             title={panel.title}
             isActive={panel.isActive}
             currentProduct={currentProduct}
-            // toggleReviewsActive={toggleReviewsActive}
             togglePanel={() => togglePanel(index)}
           />
         ))}
