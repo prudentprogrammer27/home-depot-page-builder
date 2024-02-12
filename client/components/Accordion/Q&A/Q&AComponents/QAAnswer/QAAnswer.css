@@ -10,7 +10,7 @@
 }
 #qaAnswerSlim {
     display: flex;
-    display: block;
+    /* display: block; */
     display: flexbox;
     align-self: center;
     width: 100%;

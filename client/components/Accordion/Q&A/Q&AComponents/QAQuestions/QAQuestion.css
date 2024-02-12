@@ -1,5 +1,6 @@
 #qaQuestionCont {
     display: flex;
+    flex-direction: column;
     width: 97%;
     height: 75px;
     background-color: rgb(255, 255, 255);

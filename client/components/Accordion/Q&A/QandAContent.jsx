@@ -29,7 +29,7 @@ const QandAContent = ({ currentProduct }) => {
         <QAHeader />
         <Navigation />
         <QandAQuestions questionDB={questionDB} />
-        <QAAnswer questionDB={questionDB}/>
+        {/* <QAAnswer questionDB={questionDB}/> */}
         <QAFooter />
       </div>
     </div>
