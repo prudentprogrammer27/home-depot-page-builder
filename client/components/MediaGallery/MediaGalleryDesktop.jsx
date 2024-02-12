@@ -6,21 +6,19 @@ import { useAppContext } from "client/components/AppContext.jsx";
 const MediaGalleryDesktop = ({
   currentProduct,
   toggleModal,
-  // toggleReviewsActive,
-  // isReviewsActive,
   scrollToPanel,
+  showReviewModal,
 }) => {
   const [mainImage, setMainImage] = useState("");
   const [images, setImages] = useState([]);
+  const [reviewModalActive, setReviewModalActive] = useState(false);
   const { averageRating, totalReviews, totalQuestions } = useAppContext();
 
   const starNum = Math.round(parseFloat(averageRating));
 
-  //     averageRating, totalReviews,
-
   useEffect(() => {
-    if(!currentProduct.id) return;
-    
+    if (!currentProduct.id) return;
+
     const fetchData = async () => {
       try {
         const response = await axios.get(`/api/img_urls/${currentProduct.id}`);
@@ -104,14 +102,29 @@ const MediaGalleryDesktop = ({
     setMainImage(thumbnail.original);
   };
 
+  const handleReviewHover = (e) => {
+    const rect = e.target.getBoundingClientRect();
+    const position = {
+      top: rect.bottom,
+      left: rect.left,
+    };
+    setReviewModalActive(true);
+    showReviewModal(position);
+    console.log("Hovering over Review");
+  };
+
   const handleReviewsClick = () => {
-    // toggleReviewsActive();
+    setReviewModalActive(false);
     scrollToPanel(3);
   };
 
   const handleQuestionsClick = () => {
     scrollToPanel(2);
   };
+
+  // const handleQuestionsHover = () => {
+  //   onMouseEnter
+  // }
 
   return (
     <>
@@ -130,6 +143,7 @@ const MediaGalleryDesktop = ({
             <div
               className="gallery-review-summary"
               onClick={handleReviewsClick}
+              onMouseEnter={handleReviewHover}
             >
               <span className="gallery-review-icon-container">
                 {checkReviewStatus(starNum)}
@@ -140,7 +154,7 @@ const MediaGalleryDesktop = ({
               className="gallery-questions-summary"
               onClick={handleQuestionsClick}
             >
-              Questions & Answers {`(${totalQuestions})`}
+              <p>Questions & Answers {`(${totalQuestions})`}</p>
             </div>
           </div>
         </div>
@@ -153,15 +167,24 @@ const MediaGalleryDesktop = ({
           </div>
         </div>
         <div className="gallery-share-print-container">
-          Share & Print
-          <button className="gallery-share-button">
-            <img
-              src="./components/MediaGallery/icons/shareIcon.png"
-              alt="share arrow button"
-            ></img>
-            Share
-          </button>
-          <button className="gallery-print-button"></button>
+          <div className="gallery-share-container">
+            <button className="gallery-share-button">
+              <img
+                src="./components/MediaGallery/icons/shareIcon.png"
+                alt="share arrow icon"
+              ></img>
+              Share
+            </button>
+          </div>
+          <div className="gallery-print-container">
+            <button className="gallery-print-button">
+              <img
+                src="./components/MediaGallery/icons/printIcon.png"
+                alt="print icon"
+              ></img>
+              Print
+            </button>
+          </div>
         </div>
       </div>
     </>

@@ -1,5 +1,3 @@
-@import "react-image-gallery/styles/css/image-gallery.css";
-
 .overlay {
   background: #0009;
   border: solid;
@@ -14,8 +12,6 @@
 #modal-content {
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
-  /* justify-content: center; */
   border: solid;
   background: #fff;
   overflow: auto;

@@ -4,7 +4,7 @@ CREATE TABLE review_images (
   id SERIAL PRIMARY KEY,
   review_id INTEGER REFERENCES reviews(id),
   img_url VARCHAR,
-  product_id INTEGER REFERENCES product(id)
+  product_id INTEGER REFERENCES products(id)
 );
 
 
