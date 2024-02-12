@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./mediaModal.css";
 import axios from "axios";
 
+
 const MediaModal = ({ currentProduct, toggleModal }) => {
   const [mainImage, setMainImage] = useState("");
   const [images, setImages] = useState([]);

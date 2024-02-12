@@ -52,5 +52,3 @@ const CustomerReviewsChart = () => {
 };
 
 export default CustomerReviewsChart;
-
-
