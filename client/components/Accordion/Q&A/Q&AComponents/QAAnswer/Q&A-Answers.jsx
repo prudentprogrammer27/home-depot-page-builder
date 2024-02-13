@@ -2,34 +2,39 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import './QAAnswer.css';
 
-const QAAnswer = ({ questionDB }) => {
-  console.log('childDB', questionDB)
-  if (!questionDB || questionDB.length < 2) {
+
+
+const QAAnswer = ({ currentQuestion }) => {
+  console.log('currentQuestion at QAAnswer component', currentQuestion);
+  if (!currentQuestion) {
     return <div>Loading...</div>;
   }
 
+  useEffect (()=> {
+  },[currentQuestion]);
+
     return (
-        <div id="qaAnswerCont">
-          <div id="qaAnswerSlim">
-            <div id="qaAnswerTop">
-              <div id="qaAnswerTopLeft">Answer this question</div>
-            </div>
-            <div id="qaAnswerMiddle">
-              <div id="qaAnswerMiddleTop">
-                <div id="qaAnswerMiddleTopLeft">A: {questionDB[1].response_content} </div>
-                <div id="qaAnswerMiddleTopBottom">
-                  <div id="qaAnswerMiddleTopBottomLeft">by</div>
-                  <div id="qaAnswerMiddleTopBottomMiddle">RYOBI</div>
-                  <div id="qaAnswerMiddleTopBottomRight">| {questionDB[1].response_date.slice(0,10)}</div>
+        <div className="qaAnswerCont">
+            <div key={currentQuestion.id} className="qaAnswerSlim">
+              <div className="qaAnswerTop">
+                <div className="qaAnswerTopLeft">Answer this question</div>
+              </div>
+              <div className="qaAnswerMiddle">
+                <div className="qaAnswerMiddleTop">
+                  <div className="qaAnswerMiddleTopLeft">A: {currentQuestion.response_content} </div>
+                  <div className="qaAnswerMiddleTopBottom">
+                    <div className="qaAnswerMiddleTopBottomLeft">by</div>
+                    <div className="qaAnswerMiddleTopBottomMiddle">{currentQuestion.response_user_name}</div>
+                    <div className="qaAnswerMiddleTopBottomRight">| {currentQuestion.response_date}</div>
+                  </div>
+                </div>
+                <div className="qaAnswerMiddleBottom"></div>
+                <div className="qaAnswerBottom">
+                  <div className="qaAnswerBottomLeft">Helpful?</div>
+                  <div className="qaAnswerBottomRight">Report</div>
                 </div>
               </div>
-              <div id="qaAnswerMiddleBottom"></div>
-              <div id="qaAnswerBottom">
-                <div id="qaAnswerBottomLeft">Helpful?</div>
-                <div id="qaAnswerBottomRight">Report</div>
-              </div>
             </div>
-          </div> 
         </div>
     )
 };
