@@ -37,21 +37,3 @@ const QandAContent = ({ currentProduct }) => {
 };
 
 export default QandAContent;
-
-
-// <div className="zone-card">
-//       <section className={`panel ${isActive ? 'active' : ''}`} onClick={togglePanel} role="button" tabIndex="0">
-//         <div className="panel-header">
-//           <h3>{title}</h3>
-//           <img
-//             src="https://assets.thdstatic.com/images/v1/caret-brand-small.svg"
-//             alt="caret"
-//             className={`toggleImg ${isActive ? 'rotate' : ''}`}
-//             height="16"
-//             width="16"
-//             loading="lazy"
-//           />
-//         </div>
-//         {isActive && renderContent()}
-//       </section>
-//       </div>
