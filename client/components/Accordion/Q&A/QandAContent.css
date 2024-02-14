@@ -1,8 +1,7 @@
-/* {QA HEADER} */
 #accordion-qa {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: fit-content;
-    background-color: white;
-}
+    display:flex;
+    flex-direction:column;
+    width:100%;
+    height:fit-content;
+    background-color:#fff
+    }

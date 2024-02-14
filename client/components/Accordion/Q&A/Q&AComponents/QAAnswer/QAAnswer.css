@@ -1,120 +1,124 @@
 .qaAnswerCont {
-    display: flex;
-    width: 97%;
-    height: 200px;
-    background-color: white;
-    border-top: 1px solid rgb(200, 197, 197);
-    border-bottom: 1px solid rgb(204, 201, 201);
-    padding: 10px;
-    margin-left: 10px;
+display:flex;
+width:97%;
+height:200px;
+background-color:#fff;
+border-top:1px solid #c8c5c5;
+border-bottom:1px solid #ccc9c9;
+padding:10px;
+margin-left:10px
 }
-.qaAnswerSlim {
-    display: flex;
-    /* display: block; */
-    display: flexbox;
-    align-self: center;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    margin: 10px 10px 10px 10px;
-}
-.qaAnswerTop {
-    width: 100%;
-    height: 20px;
-    background-color: white;
-}
-.qaAnswerTopLeft {
-    display: flex;
-    width: 200px;
-    height: 20px;
-    background-color: white;
-    margin-left: 25px;
-    font: 14px ''
-}
-.qaAnswerMiddle {
-    width: 1340px;
-    height: 160px;
-    background-color: white;
-    margin: 10px 10px 10px 10px;
-    border-bottom: 1px solid rgb(191, 189, 189);
-}
-.qaAnswerMiddleTop {
-    width: 520px;
-    height: 95px;
-    background-color: white;
-    align-self: center;
-    margin-top: 15px;
-    margin-left: 15px;
-    font: 14px "Helvetica-Neue"
-}
-/* #qaAnswerMiddleTopLeft {
-    display: flex;
 
-    background-color: white;
-    justify-content: center;
-    align-items: center;
-} */
+.qaAnswerSlim {
+display:flex;
+display:flexbox;
+align-self:center;
+width:100%;
+height:100%;
+background-color:#fff;
+margin:10px
+}
+
+.qaAnswerTop {
+width:100%;
+height:20px;
+background-color:#fff
+}
+
+.qaAnswerTopLeft {
+display:flex;
+width:200px;
+height:20px;
+background-color:#fff;
+margin-left:25px;
+font:14px
+}
+
+.qaAnswerMiddle {
+width:1340px;
+height:160px;
+background-color:#fff;
+margin:10px;
+border-bottom:1px solid #bfbdbd
+}
+
+.qaAnswerMiddleTop {
+width:520px;
+height:95px;
+background-color:#fff;
+align-self:center;
+margin-top:15px;
+margin-left:15px;
+font:14px Helvetica-Neue
+}
+
 .qaAnswerMiddleTopBottom {
-    display: flex;
-    display: block;
-    height: 25px;
-    width: 200px;
-    background-color: white;
-    margin-top: 15px;
+display:flex;
+display:block;
+height:25px;
+width:200px;
+background-color:#fff;
+margin-top:15px
 }
+
 .qaAnswerMiddleTopBottomLeft {
-    display: flex;
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
+display:flex;
+display:inline-block;
+width:20px;
+height:20px;
+background-color:#fff;
+align-items:center;
+justify-content:center
 }
+
 .qaAnswerMiddleTopBottomMiddle {
-    display: flex;
-    display: inline-block;
-    width: 50px;
-    height: 20px;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
+display:flex;
+display:inline-block;
+width:50px;
+height:20px;
+background-color:#fff;
+align-items:center;
+justify-content:center
 }
+
 .qaAnswerMiddleTopBottomRight {
-    display: flex;
-    display: inline-block;
-    width: 75px;
-    height: 20px;
-    background-color: white;
-    align-items: center;
-    justify-content: center;
-    margin-left: 0px;
+display:flex;
+display:inline-block;
+width:75px;
+height:20px;
+background-color:#fff;
+align-items:center;
+justify-content:center;
+margin-left:0
 }
+
 .qaAnswerBottom {
-    display: flex;
-    width: 98%;
-    height: 25px;
-    background-color: white;
-    margin-top: 15px;
-    margin-left: 15px;
-    margin-top: 25px;
+display:flex;
+width:98%;
+height:25px;
+background-color:#fff;
+margin-top:15px;
+margin-left:15px;
+margin-top:25px
 }
+
 .qaAnswerBottomLeft {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 60px;
-    height: 25px;
-    background-color: white;
-    border: 1px solid gray;
-    color: #333;
+display:flex;
+justify-content:center;
+align-items:center;
+width:60px;
+height:25px;
+background-color:#fff;
+border:1px solid gray;
+color:#333
 }
+
 .qaAnswerBottomRight {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 55px;
-    height: 25px;
-    background-color: rgb(255, 255, 255);
-    margin-left: 1180px;
+display:flex;
+justify-content:center;
+align-items:center;
+width:55px;
+height:25px;
+background-color:#fff;
+margin-left:1180px
 }
