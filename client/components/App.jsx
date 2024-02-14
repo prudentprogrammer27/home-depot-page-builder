@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import Sidebar from "./Sidebar/Sidebar.jsx";
 import Header from "./Header/Header.jsx";
-import MediaGalleryDesktop from "./MediaGallery/MediaGalleryDesktop.jsx";
 import axios from "axios";
 import Accordion from "./Accordion/Accordion.jsx";
 import MediaModal from "./MediaModal/MediaModal.jsx";
 import ConsumerCardModal from "./Sidebar/ConsumerCardModal/ConsumerCardModal.jsx";
 import NavigationBar from "./NavigationBar/NavigationBar.jsx";
 import { AppProvider } from "./AppContext";
-// import ReviewModal from "client/components/ReviewModal/ReviewModal.jsx";
+
+const MediaGalleryDesktop = lazy(() => import("./MediaGallery/MediaGalleryDesktop.jsx"));
 
 const App = () => {
   const [currentProduct, setCurrentProduct] = useState([]);
@@ -38,8 +38,6 @@ const App = () => {
     setIsReviewModal(false);
   };
 
-  const ryobiDrill = 1;
-
   const dewaltDrill = 2;
 
   useEffect(() => {
@@ -65,39 +63,31 @@ const App = () => {
             modal={modal}
           />
         )}
-        {/* {isReviewModal && (
-          <ReviewModal
-            hoverPosition={hoverPosition}
-            hideReviewModal={hideReviewModal}
-          />
-        )} */}
         <div className="item-wrapper bounding-box">
           <NavigationBar />
-          <div className="picture-and-sidebar">
-            <div className="img-gallery">
-              <MediaGalleryDesktop
+          <Suspense fallback={<div>Loading...</div>}>
+            <div className="picture-and-sidebar">
+              <div className="img-gallery">
+                <MediaGalleryDesktop
+                  currentProduct={currentProduct}
+                  toggleModal={toggleModal}
+                  scrollToPanel={scrollToPanel}
+                  showReviewModal={showReviewModal}
+                />
+              </div>
+              <Sidebar
                 currentProduct={currentProduct}
-                toggleModal={toggleModal}
-                // toggleReviewsActive={toggleReviewsActive}
-                // isReviewsActive={isReviewsActive}
-                scrollToPanel={scrollToPanel}
-                showReviewModal={showReviewModal}
+                setCardModal={setCardModal}
+                setItemsInCart={setItemsInCart}
               />
             </div>
-            <Sidebar
+            <Accordion
               currentProduct={currentProduct}
-              setCardModal={setCardModal}
-              setItemsInCart={setItemsInCart}
+              scrollToPanel={scrollToPanel}
+              panelToShow={panelToShow}
+              isScrolling={isScrolling}
             />
-          </div>
-          <Accordion
-            currentProduct={currentProduct}
-            // toggleReviewsActive={toggleReviewsActive}
-            // isReviewsActive={isReviewsActive}
-            scrollToPanel={scrollToPanel}
-            panelToShow={panelToShow}
-            isScrolling={isScrolling}
-          />
+          </Suspense>
         </div>
         <ConsumerCardModal
           isCardModal={isCardModal}
